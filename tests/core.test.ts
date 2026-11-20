@@ -4,6 +4,7 @@ import { csv } from "../core/csv.js";
 import { validateInput, type Shop, type Transaction } from "../core/input.js";
 import { bucket, summarize } from "../core/ledger.js";
 import { day, formatDate, MAX_AMOUNT, money, parseAmount, sum } from "../core/values.js";
+import { loadSummary } from "../scripts/load-summary.js";
 
 for (const [input, expected] of [["15000", 1500000], ["15000.5", 1500050], ["15000.50", 1500050], ["0.05", 5], [" \t0.05 ", 5]] as const) {
   test("parse " + JSON.stringify(input), () => assert.equal(parseAmount(input, 2), expected));
@@ -59,6 +60,36 @@ test("overpayment creates credit, and next sale consumes it", () => {
 });
 test("prepayment", () => {
   assert.equal(run(tx(1,"payment",50),tx(2,"sale",45,asOf)).credit, 5);
+});
+test("credit invariant: credit above zero implies no open sales", async () => {
+  function assertInvariant(result: ReturnType<typeof run>, label: string) {
+    const open = result.aging.reduce((total, amount) => total + amount, 0);
+    assert.equal(open - result.credit, result.balance, label + ": reconciled balance");
+    if (result.credit > 0) {
+      assert.equal(open, 0, label + ": unpaid sales across all aging buckets");
+      assert.equal(result.overdue, 0, label + ": overdue amount");
+    }
+  }
+
+  for (const name of ["sample", "stress-max", "stress-min", "currency-usd", "currency-jpy"]) {
+    const summary = await loadSummary("data/" + name, "2026-11-20");
+    assert.ok(summary.ledgers.length > 0, name + ": dataset contains customers");
+    for (const result of summary.ledgers) assertInvariant(result, name + "/" + result.id);
+  }
+
+  const events = [
+    tx(1, "payment", 100, asOf - 4),
+    tx(2, "sale", 40, asOf - 3),
+    tx(3, "sale", 90, asOf - 2),
+    tx(4, "payment", 50, asOf - 1)
+  ];
+  const stages = events.map((_, index) => run(...events.slice(0, index + 1)));
+  assert.deepEqual(stages.map(stage => stage.credit), [100, 60, 0, 20]);
+  assert.deepEqual(stages.map(stage => stage.balance), [-100, -60, 30, -20]);
+  assert.equal(stages[2].aging[0], 30);
+  assert.deepEqual(stages[3].entries[3].allocations.map(({ id, amount }) => [id, amount]), [["3", 30]]);
+  assert.equal(stages[3].entries[3].unapplied, 20);
+  for (const [index, stage] of stages.entries()) assertInvariant(stage, "crafted stage " + (index + 1));
 });
 test("same-day sales precede earlier-listed payments", () => {
   const result = run(tx(1,"payment",80), tx(2,"sale",200));
