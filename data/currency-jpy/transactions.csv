@@ -1,0 +1,6 @@
+id,date,customer_id,type,amount,note,due_date,method,reference,sample_label
+D01,2026-10-01,fen,sale,1500,Fictional stock order,2026-10-15,,,FICTIONAL SAMPLE DATA
+D02,2026-11-10,fen,payment,400,Fictional part payment,,Counter,DEMO-1,
+D03,2026-11-01,roan,sale,700,Fictional stock order,2026-11-14,,,
+D04,2026-11-10,roan,payment,800,Fictional overpayment,,Counter,DEMO-2,
+D05,2026-11-15,tavi,sale,250,Fictional stock order,2026-11-29,,,
