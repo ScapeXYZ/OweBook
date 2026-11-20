@@ -1,0 +1,168 @@
+{
+  "provenance": "code commit: db5d3748c2ac4cc38008fc23c65d82b163394e3a",
+  "outputs": [
+    {
+      "file": "ledger.html",
+      "source": "Hyper Elements render with lint and email-client checks",
+      "diagnostics": [
+        {
+          "code": "page/lint-text-size",
+          "severity": "info",
+          "message": "This text is 12px, under 14px",
+          "path": "root.children[0].children[0].children[0]",
+          "fix": "make it 14px or larger, on phones at least (style.mobile.fontSize)",
+          "see": "https://www.hyperelements.dev/docs/lint#text-size"
+        },
+        {
+          "code": "page/lint-text-size",
+          "severity": "info",
+          "message": "This text is 12px, under 14px",
+          "path": "root.children[0].children[0].children[4].children[0].children[0]",
+          "fix": "make it 14px or larger, on phones at least (style.mobile.fontSize)",
+          "see": "https://www.hyperelements.dev/docs/lint#text-size"
+        },
+        {
+          "code": "page/lint-text-size",
+          "severity": "info",
+          "message": "This text is 12px, under 14px",
+          "path": "root.children[0].children[0].children[4].children[1].children[0]",
+          "fix": "make it 14px or larger, on phones at least (style.mobile.fontSize)",
+          "see": "https://www.hyperelements.dev/docs/lint#text-size"
+        },
+        {
+          "code": "page/lint-text-size",
+          "severity": "info",
+          "message": "This text is 12px, under 14px",
+          "path": "root.children[0].children[0].children[4].children[2].children[0]",
+          "fix": "make it 14px or larger, on phones at least (style.mobile.fontSize)",
+          "see": "https://www.hyperelements.dev/docs/lint#text-size"
+        },
+        {
+          "code": "page/lint-text-size",
+          "severity": "info",
+          "message": "This text is 12px, under 14px",
+          "path": "root.children[0].children[0].children[4].children[3].children[0]",
+          "fix": "make it 14px or larger, on phones at least (style.mobile.fontSize)",
+          "see": "https://www.hyperelements.dev/docs/lint#text-size"
+        },
+        {
+          "code": "page/lint-text-size",
+          "severity": "info",
+          "message": "This text is 12px, under 14px",
+          "path": "root.children[0].children[0].children[6].children[0].children[0]",
+          "fix": "make it 14px or larger, on phones at least (style.mobile.fontSize)",
+          "see": "https://www.hyperelements.dev/docs/lint#text-size"
+        },
+        {
+          "code": "page/lint-text-size",
+          "severity": "info",
+          "message": "This text is 12px, under 14px",
+          "path": "root.children[0].children[0].children[6].children[1].children[0]",
+          "fix": "make it 14px or larger, on phones at least (style.mobile.fontSize)",
+          "see": "https://www.hyperelements.dev/docs/lint#text-size"
+        },
+        {
+          "code": "page/lint-text-size",
+          "severity": "info",
+          "message": "This text is 12px, under 14px",
+          "path": "root.children[0].children[0].children[6].children[2].children[0]",
+          "fix": "make it 14px or larger, on phones at least (style.mobile.fontSize)",
+          "see": "https://www.hyperelements.dev/docs/lint#text-size"
+        },
+        {
+          "code": "page/lint-text-size",
+          "severity": "info",
+          "message": "This text is 12px, under 14px",
+          "path": "root.children[0].children[0].children[6].children[3].children[0]",
+          "fix": "make it 14px or larger, on phones at least (style.mobile.fontSize)",
+          "see": "https://www.hyperelements.dev/docs/lint#text-size"
+        }
+      ]
+    },
+    {
+      "file": "statements/min-customer.pdf",
+      "source": "Hyper Elements validate",
+      "diagnostics": []
+    },
+    {
+      "file": "statements/min-customer.pdf",
+      "source": "Hyper Elements renderPdf",
+      "diagnostics": []
+    },
+    {
+      "file": "receipts/MIN3.html",
+      "source": "Hyper Elements render with lint and email-client checks",
+      "diagnostics": [
+        {
+          "code": "email/lint-text-size",
+          "severity": "info",
+          "message": "This text is 12px, under 14px",
+          "path": "root.children[0].children[0]",
+          "fix": "make it 14px or larger, on phones at least (style.mobile.fontSize)",
+          "see": "https://www.hyperelements.dev/docs/lint#text-size"
+        },
+        {
+          "code": "email/lint-text-size",
+          "severity": "info",
+          "message": "This text is 12px, under 14px",
+          "path": "root.children[0].children[10].children[0]",
+          "fix": "make it 14px or larger, on phones at least (style.mobile.fontSize)",
+          "see": "https://www.hyperelements.dev/docs/lint#text-size"
+        },
+        {
+          "code": "email/lint-text-size",
+          "severity": "info",
+          "message": "This text is 13px, under 14px",
+          "path": "root.children[0].children[11]",
+          "fix": "make it 14px or larger, on phones at least (style.mobile.fontSize)",
+          "see": "https://www.hyperelements.dev/docs/lint#text-size"
+        },
+        {
+          "code": "email/degraded",
+          "severity": "info",
+          "message": "fonts on this Email in some email clients: no web font loads: the next font in each stack shows",
+          "path": "root.props.fonts",
+          "clients": [
+            "outlook",
+            "outlook-com",
+            "outlook-mac",
+            "outlook-app",
+            "gmail",
+            "gmail-app",
+            "gmail-app-other",
+            "yahoo",
+            "aol"
+          ],
+          "see": "https://www.caniemail.com/features/css-at-font-face/"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it",
+          "path": "root.children[0].children[0].style.letterSpacing",
+          "clients": [
+            "outlook"
+          ]
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "letterSpacing on this Heading in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it",
+          "path": "root.children[0].children[7].style.letterSpacing",
+          "clients": [
+            "outlook"
+          ]
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it",
+          "path": "root.children[0].children[10].children[0].style.letterSpacing",
+          "clients": [
+            "outlook"
+          ]
+        }
+      ]
+    }
+  ]
+}

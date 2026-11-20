@@ -1,0 +1,2426 @@
+code commit: cffdce2caa50274f1ee777dc543fb9ce4dfa86e7
+
++ source=<local repository>
+++ git -C <local repository> rev-parse HEAD
++ source_head=cffdce2caa50274f1ee777dc543fb9ce4dfa86e7
+++ mktemp -d <temporary WSL clone>
++ dest=<temporary WSL clone>
++ git clone --no-local <local repository> <temporary WSL clone>
+Cloning into '<temporary WSL clone>'...
++ cd <temporary WSL clone>
+++ git rev-parse HEAD
++ clone_head=cffdce2caa50274f1ee777dc543fb9ce4dfa86e7
++ test cffdce2caa50274f1ee777dc543fb9ce4dfa86e7 = cffdce2caa50274f1ee777dc543fb9ce4dfa86e7
++ node --version
+v20.20.2
++ npm --version
+10.8.2
+++ node --version
++ test v20.20.2 = v20.20.2
+++ npm --version
++ test 10.8.2 = 10.8.2
++ run npm ci
++ status=0
++ npm ci
+
+added 101 packages, and audited 102 packages in 6s
+
+5 packages are looking for funding
+  run `npm fund` for details
+
+6 moderate severity vulnerabilities
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+npm ci exit code: 0
++ printf '%s exit code: %s\n' 'npm ci' 0
++ return 0
++ run npm run verify
++ status=0
++ npm run verify
+
+> owebook@1.0.0 verify
+> tsx scripts/verify.ts
+
+$ node node_modules/typescript/bin/tsc -p tsconfig.json
+$ node --import tsx scripts/test.ts
+TAP version 13
+# Subtest: black on white is 21:1
+ok 1 - black on white is 21:1
+  ---
+  duration_ms: 13.618876
+  ...
+# Subtest: parse "15000"
+ok 2 - parse "15000"
+  ---
+  duration_ms: 6.998286
+  ...
+# Subtest: parse "15000.5"
+ok 3 - parse "15000.5"
+  ---
+  duration_ms: 0.730115
+  ...
+# Subtest: parse "15000.50"
+ok 4 - parse "15000.50"
+  ---
+  duration_ms: 0.907591
+  ...
+# Subtest: parse "0.05"
+ok 5 - parse "0.05"
+  ---
+  duration_ms: 0.872114
+  ...
+# Subtest: parse " \\t0.05 "
+ok 6 - parse " \\t0.05 "
+  ---
+  duration_ms: 0.500625
+  ...
+# Subtest: reject "15000.505"
+ok 7 - reject "15000.505"
+  ---
+  duration_ms: 1.229312
+  ...
+# Subtest: reject "15000.500"
+ok 8 - reject "15000.500"
+  ---
+  duration_ms: 0.613365
+  ...
+# Subtest: reject ".5"
+ok 9 - reject ".5"
+  ---
+  duration_ms: 0.531889
+  ...
+# Subtest: reject "1."
+ok 10 - reject "1."
+  ---
+  duration_ms: 0.707837
+  ...
+# Subtest: reject "1,000"
+ok 11 - reject "1,000"
+  ---
+  duration_ms: 9.680817
+  ...
+# Subtest: reject "-5"
+ok 12 - reject "-5"
+  ---
+  duration_ms: 0.565188
+  ...
+# Subtest: reject "1e3"
+ok 13 - reject "1e3"
+  ---
+  duration_ms: 0.412359
+  ...
+# Subtest: reject "$5"
+ok 14 - reject "$5"
+  ---
+  duration_ms: 0.469332
+  ...
+# Subtest: reject ""
+ok 15 - reject ""
+  ---
+  duration_ms: 0.62207
+  ...
+# Subtest: reject "0"
+ok 16 - reject "0"
+  ---
+  duration_ms: 0.43154
+  ...
+# Subtest: reject "0.00"
+ok 17 - reject "0.00"
+  ---
+  duration_ms: 0.60075
+  ...
+# Subtest: zero minor units
+ok 18 - zero minor units
+  ---
+  duration_ms: 0.782534
+  ...
+# Subtest: amount and safe sum boundaries
+ok 19 - amount and safe sum boundaries
+  ---
+  duration_ms: 1.133248
+  ...
+# Subtest: CSV data row boundary
+ok 20 - CSV data row boundary
+  ---
+  duration_ms: 137.176352
+  ...
+# Subtest: CSV BOM, CRLF, blank lines, commas and escaped quotes
+ok 21 - CSV BOM, CRLF, blank lines, commas and escaped quotes
+  ---
+  duration_ms: 14.897606
+  ...
+# Subtest: partial settlement and FIFO by due override
+ok 22 - partial settlement and FIFO by due override
+  ---
+  duration_ms: 3.01744
+  ...
+# Subtest: FIFO breaks ties by sale date then file order
+ok 23 - FIFO breaks ties by sale date then file order
+  ---
+  duration_ms: 1.274665
+  ...
+# Subtest: overpayment creates credit, and next sale consumes it
+ok 24 - overpayment creates credit, and next sale consumes it
+  ---
+  duration_ms: 18.468494
+  ...
+# Subtest: prepayment
+ok 25 - prepayment
+  ---
+  duration_ms: 6.04949
+  ...
+# Subtest: same-day sales precede earlier-listed payments
+ok 26 - same-day sales precede earlier-listed payments
+  ---
+  duration_ms: 0.875878
+  ...
+# Subtest: due today and aging edges
+ok 27 - due today and aging edges
+  ---
+  duration_ms: 2.498248
+  ...
+# Subtest: terms precedence
+ok 28 - terms precedence
+  ---
+  duration_ms: 1.217806
+  ...
+# Subtest: formatters and calendar validation
+ok 29 - formatters and calendar validation
+  ---
+  duration_ms: 1.944949
+  ...
+# Subtest: validates multiple issues with row and file, capped at twenty
+ok 30 - validates multiple issues with row and file, capped at twenty
+  ---
+  duration_ms: 30.658494
+  ...
+# Subtest: future transactions excluded and warnings counted; deterministic summary
+ok 31 - future transactions excluded and warnings counted; deterministic summary
+  ---
+  duration_ms: 6.143446
+  ...
+# Subtest: D9 three minor units parse and format 1.250 and reject 1.2501
+ok 32 - D9 three minor units parse and format 1.250 and reject 1.2501
+  ---
+  duration_ms: 17.508191
+  ...
+# Subtest: D9 zero minor units display JPY without decimals and reject 100.0
+ok 33 - D9 zero minor units display JPY without decimals and reject 100.0
+  ---
+  duration_ms: 0.999979
+  ...
+# Subtest: F1 transaction maximum and one above with CSV row
+ok 34 - F1 transaction maximum and one above with CSV row
+  ---
+  duration_ms: 20.988931
+  ...
+# Subtest: F1 currency symbol maximum and one above with shop row
+ok 35 - F1 currency symbol maximum and one above with shop row
+  ---
+  duration_ms: 5.951824
+  ...
+# Subtest: F1 customer absolute balance maximum and one above
+ok 36 - F1 customer absolute balance maximum and one above
+  ---
+  duration_ms: 5.58687
+  ...
+# Subtest: F1 customer credit and negative balance maximum and one above
+ok 37 - F1 customer credit and negative balance maximum and one above
+  ---
+  duration_ms: 2.44541
+  ...
+# Subtest: F1 customer overdue maximum and one above
+ok 38 - F1 customer overdue maximum and one above
+  ---
+  duration_ms: 2.964832
+  ...
+# Subtest: F1 shop outstanding maximum and one above
+ok 39 - F1 shop outstanding maximum and one above
+  ---
+  duration_ms: 361.161426
+  ...
+# Subtest: F1 shop overdue maximum and one above
+ok 40 - F1 shop overdue maximum and one above
+  ---
+  duration_ms: 245.279885
+  ...
+# Subtest: F1 shop credit maximum and one above use total_credit
+ok 41 - F1 shop credit maximum and one above use total_credit
+  ---
+  duration_ms: 76.846309
+  ...
+# Subtest: S3 sample summary schema and total_credit
+ok 42 - S3 sample summary schema and total_credit
+  ---
+  duration_ms: 90.078922
+  ...
+# Subtest: S3 stress-max summary schema and total_credit
+ok 43 - S3 stress-max summary schema and total_credit
+  ---
+  duration_ms: 13.198
+  ...
+# Subtest: S3 stress-min summary schema and total_credit
+ok 44 - S3 stress-min summary schema and total_credit
+  ---
+  duration_ms: 9.223967
+  ...
+# Subtest: S7 sample summary-only command writes one file byte-identical to build
+ok 45 - S7 sample summary-only command writes one file byte-identical to build
+  ---
+  duration_ms: 9931.819903
+  ...
+1..45
+# tests 45
+# suites 0
+# pass 45
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 11609.594653
+$ node --import tsx scripts/contrast.ts
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+$ node --import tsx scripts/build.tsx --data data/sample --as-of 2026-11-20 --out out/sample
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+{"checked":29,"errors":0,"warnings":0,"info":66}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/ledger.tsx --props out/sample/evidence/ledger-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/ledger.tsx","input":"template","root":"Page","status":"ok","outputs":[],"diagnostics":[{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[13].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/reminder.tsx --props out/sample/evidence/reminder-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/reminder.tsx","input":"template","root":"Canvas","status":"ok","outputs":[],"diagnostics":[]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/receipt.tsx --props out/sample/evidence/receipt-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/receipt.tsx","input":"template","root":"Email","status":"ok","outputs":[],"diagnostics":[{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Heading in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[7].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[10].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[10].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 13px, under 14px","path":"root.children[0].children[11]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node --import tsx scripts/build.tsx --data data/stress-max --as-of 2026-11-20 --out out/stress-max
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+{"checked":5,"errors":0,"warnings":0,"info":16}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/ledger.tsx --props out/stress-max/evidence/ledger-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/ledger.tsx","input":"template","root":"Page","status":"ok","outputs":[],"diagnostics":[{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/reminder.tsx --props out/stress-max/evidence/reminder-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/reminder.tsx","input":"template","root":"Canvas","status":"ok","outputs":[],"diagnostics":[]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/receipt.tsx --props out/stress-max/evidence/receipt-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/receipt.tsx","input":"template","root":"Email","status":"ok","outputs":[],"diagnostics":[{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Heading in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[7].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[10].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[10].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 13px, under 14px","path":"root.children[0].children[11]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node --import tsx scripts/build.tsx --data data/stress-min --as-of 2026-11-20 --out out/stress-min
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+{"checked":4,"errors":0,"warnings":0,"info":16}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/ledger.tsx --props out/stress-min/evidence/ledger-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/ledger.tsx","input":"template","root":"Page","status":"ok","outputs":[],"diagnostics":[{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[6].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[6].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[6].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[6].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/receipt.tsx --props out/stress-min/evidence/receipt-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/receipt.tsx","input":"template","root":"Email","status":"ok","outputs":[],"diagnostics":[{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Heading in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[7].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[10].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[10].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 13px, under 14px","path":"root.children[0].children[11]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node --import tsx scripts/build.tsx --data data/currency-usd --as-of 2026-11-20 --out out/currency-usd
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+{"checked":10,"errors":0,"warnings":0,"info":24}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/ledger.tsx --props out/currency-usd/evidence/ledger-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/ledger.tsx","input":"template","root":"Page","status":"ok","outputs":[],"diagnostics":[{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[13].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/reminder.tsx --props out/currency-usd/evidence/reminder-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/reminder.tsx","input":"template","root":"Canvas","status":"ok","outputs":[],"diagnostics":[]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/receipt.tsx --props out/currency-usd/evidence/receipt-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/receipt.tsx","input":"template","root":"Email","status":"ok","outputs":[],"diagnostics":[{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Heading in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[7].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[10].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[10].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 13px, under 14px","path":"root.children[0].children[11]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node --import tsx scripts/build.tsx --data data/currency-jpy --as-of 2026-11-20 --out out/currency-jpy
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+{"checked":10,"errors":0,"warnings":0,"info":24}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/ledger.tsx --props out/currency-jpy/evidence/ledger-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/ledger.tsx","input":"template","root":"Page","status":"ok","outputs":[],"diagnostics":[{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[13].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/reminder.tsx --props out/currency-jpy/evidence/reminder-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/reminder.tsx","input":"template","root":"Canvas","status":"ok","outputs":[],"diagnostics":[]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/receipt.tsx --props out/currency-jpy/evidence/receipt-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/receipt.tsx","input":"template","root":"Email","status":"ok","outputs":[],"diagnostics":[{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Heading in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[7].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[10].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[10].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 13px, under 14px","path":"root.children[0].children[11]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+npm run verify exit code: 0
++ printf '%s exit code: %s\n' 'npm run verify' 0
++ return 0
++ run python3 --version
++ status=0
++ python3 --version
+Python 3.10.12
+python3 --version exit code: 0
++ printf '%s exit code: %s\n' 'python3 --version' 0
++ return 0
++ run pdfinfo -v
++ status=0
++ pdfinfo -v
+pdfinfo version 22.02.0
+Copyright 2005-2022 The Poppler Developers - http://poppler.freedesktop.org
+Copyright 1996-2011 Glyph & Cog, LLC
++ printf '%s exit code: %s\n' 'pdfinfo -v' 0
++ return 0
+pdfinfo -v exit code: 0
++ run npm exec -- playwright --version
++ status=0
++ npm exec -- playwright --version
+Version 1.65.1
++ printf '%s exit code: %s\n' 'npm exec -- playwright --version' 0
+npm exec -- playwright --version exit code: 0
++ return 0
++ run npm run verify:full
++ status=0
++ npm run verify:full
+
+> owebook@1.0.0 verify:full
+> tsx scripts/verify.ts --full
+
+$ node node_modules/typescript/bin/tsc -p tsconfig.json
+$ node --import tsx scripts/test.ts
+TAP version 13
+# Subtest: black on white is 21:1
+ok 1 - black on white is 21:1
+  ---
+  duration_ms: 6.012574
+  ...
+# Subtest: parse "15000"
+ok 2 - parse "15000"
+  ---
+  duration_ms: 4.950847
+  ...
+# Subtest: parse "15000.5"
+ok 3 - parse "15000.5"
+  ---
+  duration_ms: 2.182033
+  ...
+# Subtest: parse "15000.50"
+ok 4 - parse "15000.50"
+  ---
+  duration_ms: 0.882727
+  ...
+# Subtest: parse "0.05"
+ok 5 - parse "0.05"
+  ---
+  duration_ms: 0.824478
+  ...
+# Subtest: parse " \\t0.05 "
+ok 6 - parse " \\t0.05 "
+  ---
+  duration_ms: 0.479495
+  ...
+# Subtest: reject "15000.505"
+ok 7 - reject "15000.505"
+  ---
+  duration_ms: 1.495052
+  ...
+# Subtest: reject "15000.500"
+ok 8 - reject "15000.500"
+  ---
+  duration_ms: 4.370481
+  ...
+# Subtest: reject ".5"
+ok 9 - reject ".5"
+  ---
+  duration_ms: 0.663884
+  ...
+# Subtest: reject "1."
+ok 10 - reject "1."
+  ---
+  duration_ms: 0.988341
+  ...
+# Subtest: reject "1,000"
+ok 11 - reject "1,000"
+  ---
+  duration_ms: 7.468905
+  ...
+# Subtest: reject "-5"
+ok 12 - reject "-5"
+  ---
+  duration_ms: 0.811636
+  ...
+# Subtest: reject "1e3"
+ok 13 - reject "1e3"
+  ---
+  duration_ms: 0.584545
+  ...
+# Subtest: reject "$5"
+ok 14 - reject "$5"
+  ---
+  duration_ms: 0.485324
+  ...
+# Subtest: reject ""
+ok 15 - reject ""
+  ---
+  duration_ms: 0.802169
+  ...
+# Subtest: reject "0"
+ok 16 - reject "0"
+  ---
+  duration_ms: 0.529917
+  ...
+# Subtest: reject "0.00"
+ok 17 - reject "0.00"
+  ---
+  duration_ms: 0.740735
+  ...
+# Subtest: zero minor units
+ok 18 - zero minor units
+  ---
+  duration_ms: 7.016008
+  ...
+# Subtest: amount and safe sum boundaries
+ok 19 - amount and safe sum boundaries
+  ---
+  duration_ms: 8.675113
+  ...
+# Subtest: CSV data row boundary
+ok 20 - CSV data row boundary
+  ---
+  duration_ms: 106.630777
+  ...
+# Subtest: CSV BOM, CRLF, blank lines, commas and escaped quotes
+ok 21 - CSV BOM, CRLF, blank lines, commas and escaped quotes
+  ---
+  duration_ms: 4.181532
+  ...
+# Subtest: partial settlement and FIFO by due override
+ok 22 - partial settlement and FIFO by due override
+  ---
+  duration_ms: 3.410064
+  ...
+# Subtest: FIFO breaks ties by sale date then file order
+ok 23 - FIFO breaks ties by sale date then file order
+  ---
+  duration_ms: 1.165917
+  ...
+# Subtest: overpayment creates credit, and next sale consumes it
+ok 24 - overpayment creates credit, and next sale consumes it
+  ---
+  duration_ms: 1.412083
+  ...
+# Subtest: prepayment
+ok 25 - prepayment
+  ---
+  duration_ms: 4.744199
+  ...
+# Subtest: same-day sales precede earlier-listed payments
+ok 26 - same-day sales precede earlier-listed payments
+  ---
+  duration_ms: 3.449576
+  ...
+# Subtest: due today and aging edges
+ok 27 - due today and aging edges
+  ---
+  duration_ms: 4.628952
+  ...
+# Subtest: terms precedence
+ok 28 - terms precedence
+  ---
+  duration_ms: 1.408927
+  ...
+# Subtest: formatters and calendar validation
+ok 29 - formatters and calendar validation
+  ---
+  duration_ms: 4.92123
+  ...
+# Subtest: validates multiple issues with row and file, capped at twenty
+ok 30 - validates multiple issues with row and file, capped at twenty
+  ---
+  duration_ms: 14.408743
+  ...
+# Subtest: future transactions excluded and warnings counted; deterministic summary
+ok 31 - future transactions excluded and warnings counted; deterministic summary
+  ---
+  duration_ms: 2.671405
+  ...
+# Subtest: D9 three minor units parse and format 1.250 and reject 1.2501
+ok 32 - D9 three minor units parse and format 1.250 and reject 1.2501
+  ---
+  duration_ms: 8.833231
+  ...
+# Subtest: D9 zero minor units display JPY without decimals and reject 100.0
+ok 33 - D9 zero minor units display JPY without decimals and reject 100.0
+  ---
+  duration_ms: 1.129236
+  ...
+# Subtest: F1 transaction maximum and one above with CSV row
+ok 34 - F1 transaction maximum and one above with CSV row
+  ---
+  duration_ms: 17.122962
+  ...
+# Subtest: F1 currency symbol maximum and one above with shop row
+ok 35 - F1 currency symbol maximum and one above with shop row
+  ---
+  duration_ms: 4.840316
+  ...
+# Subtest: F1 customer absolute balance maximum and one above
+ok 36 - F1 customer absolute balance maximum and one above
+  ---
+  duration_ms: 8.353064
+  ...
+# Subtest: F1 customer credit and negative balance maximum and one above
+ok 37 - F1 customer credit and negative balance maximum and one above
+  ---
+  duration_ms: 9.759687
+  ...
+# Subtest: F1 customer overdue maximum and one above
+ok 38 - F1 customer overdue maximum and one above
+  ---
+  duration_ms: 4.97556
+  ...
+# Subtest: F1 shop outstanding maximum and one above
+ok 39 - F1 shop outstanding maximum and one above
+  ---
+  duration_ms: 256.134936
+  ...
+# Subtest: F1 shop overdue maximum and one above
+ok 40 - F1 shop overdue maximum and one above
+  ---
+  duration_ms: 130.824406
+  ...
+# Subtest: F1 shop credit maximum and one above use total_credit
+ok 41 - F1 shop credit maximum and one above use total_credit
+  ---
+  duration_ms: 97.307186
+  ...
+# Subtest: S3 sample summary schema and total_credit
+ok 42 - S3 sample summary schema and total_credit
+  ---
+  duration_ms: 84.688833
+  ...
+# Subtest: S3 stress-max summary schema and total_credit
+ok 43 - S3 stress-max summary schema and total_credit
+  ---
+  duration_ms: 16.033864
+  ...
+# Subtest: S3 stress-min summary schema and total_credit
+ok 44 - S3 stress-min summary schema and total_credit
+  ---
+  duration_ms: 10.598799
+  ...
+# Subtest: S7 sample summary-only command writes one file byte-identical to build
+ok 45 - S7 sample summary-only command writes one file byte-identical to build
+  ---
+  duration_ms: 5948.343692
+  ...
+1..45
+# tests 45
+# suites 0
+# pass 45
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 7371.290171
+$ node --import tsx scripts/contrast.ts
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+$ node --import tsx scripts/build.tsx --data data/sample --as-of 2026-11-20 --out out/sample
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+{"checked":29,"errors":0,"warnings":0,"info":66}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/ledger.tsx --props out/sample/evidence/ledger-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/ledger.tsx","input":"template","root":"Page","status":"ok","outputs":[],"diagnostics":[{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[13].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/reminder.tsx --props out/sample/evidence/reminder-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/reminder.tsx","input":"template","root":"Canvas","status":"ok","outputs":[],"diagnostics":[]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/receipt.tsx --props out/sample/evidence/receipt-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/receipt.tsx","input":"template","root":"Email","status":"ok","outputs":[],"diagnostics":[{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Heading in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[7].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[10].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[10].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 13px, under 14px","path":"root.children[0].children[11]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node --import tsx scripts/build.tsx --data data/stress-max --as-of 2026-11-20 --out out/stress-max
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+{"checked":5,"errors":0,"warnings":0,"info":16}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/ledger.tsx --props out/stress-max/evidence/ledger-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/ledger.tsx","input":"template","root":"Page","status":"ok","outputs":[],"diagnostics":[{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/reminder.tsx --props out/stress-max/evidence/reminder-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/reminder.tsx","input":"template","root":"Canvas","status":"ok","outputs":[],"diagnostics":[]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/receipt.tsx --props out/stress-max/evidence/receipt-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/receipt.tsx","input":"template","root":"Email","status":"ok","outputs":[],"diagnostics":[{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Heading in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[7].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[10].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[10].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 13px, under 14px","path":"root.children[0].children[11]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node --import tsx scripts/build.tsx --data data/stress-min --as-of 2026-11-20 --out out/stress-min
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+{"checked":4,"errors":0,"warnings":0,"info":16}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/ledger.tsx --props out/stress-min/evidence/ledger-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/ledger.tsx","input":"template","root":"Page","status":"ok","outputs":[],"diagnostics":[{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[6].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[6].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[6].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[6].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/receipt.tsx --props out/stress-min/evidence/receipt-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/receipt.tsx","input":"template","root":"Email","status":"ok","outputs":[],"diagnostics":[{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Heading in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[7].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[10].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[10].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 13px, under 14px","path":"root.children[0].children[11]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node --import tsx scripts/build.tsx --data data/currency-usd --as-of 2026-11-20 --out out/currency-usd
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+{"checked":10,"errors":0,"warnings":0,"info":24}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/ledger.tsx --props out/currency-usd/evidence/ledger-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/ledger.tsx","input":"template","root":"Page","status":"ok","outputs":[],"diagnostics":[{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[13].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/reminder.tsx --props out/currency-usd/evidence/reminder-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/reminder.tsx","input":"template","root":"Canvas","status":"ok","outputs":[],"diagnostics":[]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/receipt.tsx --props out/currency-usd/evidence/receipt-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/receipt.tsx","input":"template","root":"Email","status":"ok","outputs":[],"diagnostics":[{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Heading in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[7].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[10].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[10].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 13px, under 14px","path":"root.children[0].children[11]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node --import tsx scripts/build.tsx --data data/currency-jpy --as-of 2026-11-20 --out out/currency-jpy
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+{"checked":10,"errors":0,"warnings":0,"info":24}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/ledger.tsx --props out/currency-jpy/evidence/ledger-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/ledger.tsx","input":"template","root":"Page","status":"ok","outputs":[],"diagnostics":[{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[13].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/reminder.tsx --props out/currency-jpy/evidence/reminder-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/reminder.tsx","input":"template","root":"Canvas","status":"ok","outputs":[],"diagnostics":[]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/receipt.tsx --props out/currency-jpy/evidence/receipt-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/receipt.tsx","input":"template","root":"Email","status":"ok","outputs":[],"diagnostics":[{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Heading in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[7].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[10].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[10].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 13px, under 14px","path":"root.children[0].children[11]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ pdfinfo -v
+$ pdffonts -v
+pdfinfo version 22.02.0
+Copyright 2005-2022 The Poppler Developers - http://poppler.freedesktop.org
+Copyright 1996-2011 Glyph & Cog, LLC
+$ pdftotext -v
+pdffonts version 22.02.0
+Copyright 2005-2022 The Poppler Developers - http://poppler.freedesktop.org
+Copyright 1996-2011 Glyph & Cog, LLC
+$ pdftoppm -v
+pdftotext version 22.02.0
+Copyright 2005-2022 The Poppler Developers - http://poppler.freedesktop.org
+Copyright 1996-2011 Glyph & Cog, LLC
+pdftoppm version 22.02.0
+Copyright 2005-2022 The Poppler Developers - http://poppler.freedesktop.org
+Copyright 1996-2011 Glyph & Cog, LLC
+$ node --import tsx scripts/crosscheck.ts --require-python --sets sample stress-max stress-min currency-usd currency-jpy --report out/full/crosscheck.json
+{
+  "as_of": "2026-11-20",
+  "sets": {
+    "sample": 8,
+    "stress-max": 1,
+    "stress-min": 1,
+    "currency-usd": 3,
+    "currency-jpy": 3
+  },
+  "diff_count": 0,
+  "diffs": [],
+  "mapping": {
+    "amounts": "integer minor units",
+    "aging": [
+      "not_due",
+      "1_7",
+      "8_30",
+      "31_plus"
+    ],
+    "dates": "days since 1970-01-01",
+    "shop_credit": "required by Claude spec; may be absent in existing summary schema"
+  }
+}
+$ pdfinfo <temporary WSL clone>/out/sample/statements/c1.pdf
+Title:           Customer statement
+Creator:         Hyper Elements
+Producer:        Hyper Elements
+CreationDate:    Fri Nov 20 01:00:00 2026 WAT
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           1
+Encrypted:       no
+Page size:       595.275 x 841.89 pts (A4)
+Page rot:        0
+File size:       23202 bytes
+Optimized:       no
+PDF version:     1.3
+$ pdffonts <temporary WSL clone>/out/sample/statements/c1.pdf
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CZZZZZ+Lato-Bold                     CID TrueType      Identity-H       yes yes yes     11  0
+FZZZZZ+Lato-Regular                  CID TrueType      Identity-H       yes yes yes     12  0
+$ pdftotext -enc UTF-8 <temporary WSL clone>/out/sample/statements/c1.pdf -
+MARGINLINE SUPPLY SHOP
+
+Customer statement
+CUSTOMER
+
+AS OF
+
+Ivara Nemi Â· c1
+
+20 Nov 2026
+â‚¦0.00
+
+BALANCE BROUGHT FORWARD
+DATE
+
+ENTRY
+
+AMOUNT
+
+BALANCE
+
+2 Oct 2026
+
+E001 Â· Sale Â· Stock order
+
+â‚¦10,000.00
+
+â‚¦10,000.00
+
+4 Oct 2026
+
+E002 Â· Sale Â· Counter supplies
+
+â‚¦11,250.00
+
+â‚¦21,250.00
+
+6 Oct 2026
+
+E003 Â· Sale Â· Boxed goods
+
+â‚¦12,500.00
+
+â‚¦33,750.00
+
+8 Oct 2026
+
+E004 Â· Sale Â· Restock
+
+â‚¦13,750.00
+
+â‚¦47,500.00
+
+15 Nov 2026
+
+E005 Â· Payment Â· Payment logged
+
+â‚¦9,112.50
+
+â‚¦38,387.50
+
+AGING SUMMARY
+Not yet due
+
+1â€“7 days overdue
+â‚¦0.00
+
+8â€“30 days overdue
+â‚¦38,387.50
+
+CLOSING BALANCE
+PAYMENT INSTRUCTIONS
+Ask at the shop counter for payment details.
+Sample reference only: FICTIONAL-ACCOUNT.
+Fictional shop contact
+Prepared from Marginline Supply Shop's records as of 20 Nov 2026.
+
+31+ days overdue
+â‚¦0.00
+
+â‚¦0.00
+
+â‚¦38,387.50
+
+$ pdfinfo <temporary WSL clone>/out/sample/statements/c2.pdf
+Title:           Customer statement
+Creator:         Hyper Elements
+Producer:        Hyper Elements
+CreationDate:    Fri Nov 20 01:00:00 2026 WAT
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           1
+Encrypted:       no
+Page size:       595.275 x 841.89 pts (A4)
+Page rot:        0
+File size:       23036 bytes
+Optimized:       no
+PDF version:     1.3
+$ pdffonts <temporary WSL clone>/out/sample/statements/c2.pdf
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CZZZZZ+Lato-Bold                     CID TrueType      Identity-H       yes yes yes     11  0
+FZZZZZ+Lato-Regular                  CID TrueType      Identity-H       yes yes yes     12  0
+$ pdftotext -enc UTF-8 <temporary WSL clone>/out/sample/statements/c2.pdf -
+MARGINLINE SUPPLY SHOP
+
+Customer statement
+CUSTOMER
+
+AS OF
+
+Beko Tavin Â· c2
+
+20 Nov 2026
+â‚¦0.00
+
+BALANCE BROUGHT FORWARD
+DATE
+
+ENTRY
+
+AMOUNT
+
+BALANCE
+
+2 Oct 2026
+
+E006 Â· Sale Â· Stock order
+
+â‚¦10,000.00
+
+â‚¦10,000.00
+
+4 Oct 2026
+
+E007 Â· Sale Â· Counter supplies
+
+â‚¦11,250.00
+
+â‚¦21,250.00
+
+6 Oct 2026
+
+E008 Â· Sale Â· Boxed goods
+
+â‚¦12,500.00
+
+â‚¦33,750.00
+
+8 Oct 2026
+
+E009 Â· Sale Â· Restock
+
+â‚¦13,750.00
+
+â‚¦47,500.00
+
+15 Nov 2026
+
+E010 Â· Payment Â· Payment logged
+
+â‚¦15,000.00
+
+â‚¦32,500.00
+
+AGING SUMMARY
+Not yet due
+
+1â€“7 days overdue
+â‚¦0.00
+
+8â€“30 days overdue
+â‚¦0.00
+
+CLOSING BALANCE
+PAYMENT INSTRUCTIONS
+Ask at the shop counter for payment details.
+Sample reference only: FICTIONAL-ACCOUNT.
+Fictional shop contact
+Prepared from Marginline Supply Shop's records as of 20 Nov 2026.
+
+31+ days overdue
+â‚¦32,500.00
+
+â‚¦0.00
+
+â‚¦32,500.00
+
+$ pdfinfo <temporary WSL clone>/out/sample/statements/c3.pdf
+Title:           Customer statement
+Creator:         Hyper Elements
+Producer:        Hyper Elements
+CreationDate:    Fri Nov 20 01:00:00 2026 WAT
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           1
+Encrypted:       no
+Page size:       595.275 x 841.89 pts (A4)
+Page rot:        0
+File size:       22814 bytes
+Optimized:       no
+PDF version:     1.3
+$ pdffonts <temporary WSL clone>/out/sample/statements/c3.pdf
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CZZZZZ+Lato-Bold                     CID TrueType      Identity-H       yes yes yes     11  0
+FZZZZZ+Lato-Regular                  CID TrueType      Identity-H       yes yes yes     12  0
+$ pdftotext -enc UTF-8 <temporary WSL clone>/out/sample/statements/c3.pdf -
+MARGINLINE SUPPLY SHOP
+
+Customer statement
+CUSTOMER
+
+AS OF
+
+Sola Merin Â· c3
+
+20 Nov 2026
+â‚¦0.00
+
+BALANCE BROUGHT FORWARD
+DATE
+
+ENTRY
+
+AMOUNT
+
+BALANCE
+
+2 Oct 2026
+
+E011 Â· Sale Â· Stock order
+
+â‚¦10,000.00
+
+â‚¦10,000.00
+
+4 Oct 2026
+
+E012 Â· Sale Â· Counter supplies
+
+â‚¦11,250.00
+
+â‚¦21,250.00
+
+6 Oct 2026
+
+E013 Â· Sale Â· Boxed goods
+
+â‚¦12,500.00
+
+â‚¦33,750.00
+
+8 Oct 2026
+
+E014 Â· Sale Â· Restock
+
+â‚¦13,750.00
+
+â‚¦47,500.00
+
+15 Nov 2026
+
+E015 Â· Payment Â· Payment logged
+
+â‚¦10,000.00
+
+â‚¦37,500.00
+
+AGING SUMMARY
+Not yet due
+
+1â€“7 days overdue
+â‚¦0.00
+
+8â€“30 days overdue
+â‚¦0.00
+
+CLOSING BALANCE
+PAYMENT INSTRUCTIONS
+Ask at the shop counter for payment details.
+Sample reference only: FICTIONAL-ACCOUNT.
+Fictional shop contact
+Prepared from Marginline Supply Shop's records as of 20 Nov 2026.
+
+31+ days overdue
+â‚¦0.00
+
+â‚¦37,500.00
+
+â‚¦37,500.00
+
+$ pdfinfo <temporary WSL clone>/out/sample/statements/c4.pdf
+Title:           Customer statement
+Creator:         Hyper Elements
+Producer:        Hyper Elements
+CreationDate:    Fri Nov 20 01:00:00 2026 WAT
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           1
+Encrypted:       no
+Page size:       595.275 x 841.89 pts (A4)
+Page rot:        0
+File size:       22859 bytes
+Optimized:       no
+PDF version:     1.3
+$ pdffonts <temporary WSL clone>/out/sample/statements/c4.pdf
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CZZZZZ+Lato-Bold                     CID TrueType      Identity-H       yes yes yes     11  0
+FZZZZZ+Lato-Regular                  CID TrueType      Identity-H       yes yes yes     12  0
+$ pdftotext -enc UTF-8 <temporary WSL clone>/out/sample/statements/c4.pdf -
+MARGINLINE SUPPLY SHOP
+
+Customer statement
+CUSTOMER
+
+AS OF
+
+Naro Vessi Â· c4
+
+20 Nov 2026
+â‚¦0.00
+
+BALANCE BROUGHT FORWARD
+DATE
+
+ENTRY
+
+AMOUNT
+
+BALANCE
+
+2 Oct 2026
+
+E016 Â· Sale Â· Stock order
+
+â‚¦10,000.00
+
+â‚¦10,000.00
+
+4 Oct 2026
+
+E017 Â· Sale Â· Counter supplies
+
+â‚¦11,250.00
+
+â‚¦21,250.00
+
+6 Oct 2026
+
+E018 Â· Sale Â· Boxed goods
+
+â‚¦12,500.00
+
+â‚¦33,750.00
+
+8 Oct 2026
+
+E019 Â· Sale Â· Restock
+
+â‚¦13,750.00
+
+â‚¦47,500.00
+
+15 Nov 2026
+
+E020 Â· Payment Â· Payment logged
+
+â‚¦2,500.00
+
+â‚¦45,000.00
+
+AGING SUMMARY
+Not yet due
+
+1â€“7 days overdue
+â‚¦45,000.00
+
+8â€“30 days overdue
+â‚¦0.00
+
+CLOSING BALANCE
+PAYMENT INSTRUCTIONS
+Ask at the shop counter for payment details.
+Sample reference only: FICTIONAL-ACCOUNT.
+Fictional shop contact
+Prepared from Marginline Supply Shop's records as of 20 Nov 2026.
+
+31+ days overdue
+â‚¦0.00
+
+â‚¦0.00
+
+â‚¦45,000.00
+
+$ pdfinfo <temporary WSL clone>/out/sample/statements/c5.pdf
+Title:           Customer statement
+Creator:         Hyper Elements
+Producer:        Hyper Elements
+CreationDate:    Fri Nov 20 01:00:00 2026 WAT
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           1
+Encrypted:       no
+Page size:       595.275 x 841.89 pts (A4)
+Page rot:        0
+File size:       22684 bytes
+Optimized:       no
+PDF version:     1.3
+$ pdffonts <temporary WSL clone>/out/sample/statements/c5.pdf
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CZZZZZ+Lato-Bold                     CID TrueType      Identity-H       yes yes yes     11  0
+FZZZZZ+Lato-Regular                  CID TrueType      Identity-H       yes yes yes     12  0
+$ pdftotext -enc UTF-8 <temporary WSL clone>/out/sample/statements/c5.pdf -
+MARGINLINE SUPPLY SHOP
+
+Customer statement
+CUSTOMER
+
+AS OF
+
+Teli Aven Â· c5
+
+20 Nov 2026
+â‚¦0.00
+
+BALANCE BROUGHT FORWARD
+DATE
+
+ENTRY
+
+AMOUNT
+
+BALANCE
+
+2 Oct 2026
+
+E021 Â· Sale Â· Stock order
+
+â‚¦10,000.00
+
+â‚¦10,000.00
+
+4 Oct 2026
+
+E022 Â· Sale Â· Counter supplies
+
+â‚¦11,250.00
+
+â‚¦21,250.00
+
+6 Oct 2026
+
+E023 Â· Sale Â· Boxed goods
+
+â‚¦12,500.00
+
+â‚¦33,750.00
+
+8 Oct 2026
+
+E024 Â· Sale Â· Restock
+
+â‚¦13,750.00
+
+â‚¦47,500.00
+
+15 Nov 2026
+
+E025 Â· Payment Â· Payment logged
+
+â‚¦52,000.00
+
+â‚¦4,500.00 CR
+
+AGING SUMMARY
+Not yet due
+
+1â€“7 days overdue
+â‚¦0.00
+
+8â€“30 days overdue
+â‚¦0.00
+
+CREDIT ON ACCOUNT
+PAYMENT INSTRUCTIONS
+Ask at the shop counter for payment details.
+Sample reference only: FICTIONAL-ACCOUNT.
+Fictional shop contact
+Prepared from Marginline Supply Shop's records as of 20 Nov 2026.
+
+31+ days overdue
+â‚¦0.00
+
+â‚¦0.00
+
+â‚¦4,500.00 CR
+
+$ pdfinfo <temporary WSL clone>/out/sample/statements/c6.pdf
+Title:           Customer statement
+Creator:         Hyper Elements
+Producer:        Hyper Elements
+CreationDate:    Fri Nov 20 01:00:00 2026 WAT
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           1
+Encrypted:       no
+Page size:       595.275 x 841.89 pts (A4)
+Page rot:        0
+File size:       22513 bytes
+Optimized:       no
+PDF version:     1.3
+$ pdffonts <temporary WSL clone>/out/sample/statements/c6.pdf
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CZZZZZ+Lato-Bold                     CID TrueType      Identity-H       yes yes yes     11  0
+FZZZZZ+Lato-Regular                  CID TrueType      Identity-H       yes yes yes     12  0
+$ pdftotext -enc UTF-8 <temporary WSL clone>/out/sample/statements/c6.pdf -
+MARGINLINE SUPPLY SHOP
+
+Customer statement
+CUSTOMER
+
+AS OF
+
+Miro Saben Â· c6
+
+20 Nov 2026
+â‚¦0.00
+
+BALANCE BROUGHT FORWARD
+DATE
+
+ENTRY
+
+AMOUNT
+
+BALANCE
+
+2 Oct 2026
+
+E026 Â· Sale Â· Stock order
+
+â‚¦10,000.00
+
+â‚¦10,000.00
+
+4 Oct 2026
+
+E027 Â· Sale Â· Counter supplies
+
+â‚¦11,250.00
+
+â‚¦21,250.00
+
+6 Oct 2026
+
+E028 Â· Sale Â· Boxed goods
+
+â‚¦12,500.00
+
+â‚¦33,750.00
+
+8 Oct 2026
+
+E029 Â· Sale Â· Restock
+
+â‚¦13,750.00
+
+â‚¦47,500.00
+
+15 Nov 2026
+
+E030 Â· Payment Â· Payment logged
+
+â‚¦47,500.00
+
+â‚¦0.00
+
+AGING SUMMARY
+Not yet due
+
+1â€“7 days overdue
+â‚¦0.00
+
+8â€“30 days overdue
+â‚¦0.00
+
+CLOSING BALANCE
+PAYMENT INSTRUCTIONS
+Ask at the shop counter for payment details.
+Sample reference only: FICTIONAL-ACCOUNT.
+Fictional shop contact
+Prepared from Marginline Supply Shop's records as of 20 Nov 2026.
+
+31+ days overdue
+â‚¦0.00
+
+â‚¦0.00
+
+â‚¦0.00
+
+$ pdfinfo <temporary WSL clone>/out/sample/statements/c7.pdf
+Title:           Customer statement
+Creator:         Hyper Elements
+Producer:        Hyper Elements
+CreationDate:    Fri Nov 20 01:00:00 2026 WAT
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           1
+Encrypted:       no
+Page size:       595.275 x 841.89 pts (A4)
+Page rot:        0
+File size:       22723 bytes
+Optimized:       no
+PDF version:     1.3
+$ pdffonts <temporary WSL clone>/out/sample/statements/c7.pdf
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CZZZZZ+Lato-Bold                     CID TrueType      Identity-H       yes yes yes     11  0
+FZZZZZ+Lato-Regular                  CID TrueType      Identity-H       yes yes yes     12  0
+$ pdftotext -enc UTF-8 <temporary WSL clone>/out/sample/statements/c7.pdf -
+MARGINLINE SUPPLY SHOP
+
+Customer statement
+CUSTOMER
+
+AS OF
+
+Davi Nolu Â· c7
+
+20 Nov 2026
+â‚¦0.00
+
+BALANCE BROUGHT FORWARD
+DATE
+
+ENTRY
+
+AMOUNT
+
+BALANCE
+
+1 Oct 2026
+
+E031 Â· Payment Â· Advance
+
+â‚¦26,000.00
+
+â‚¦26,000.00 CR
+
+2 Oct 2026
+
+E032 Â· Sale Â· Stock order
+
+â‚¦10,000.00
+
+â‚¦16,000.00 CR
+
+4 Oct 2026
+
+E033 Â· Sale Â· Counter supplies
+
+â‚¦11,250.00
+
+â‚¦4,750.00 CR
+
+6 Oct 2026
+
+E034 Â· Sale Â· Boxed goods
+
+â‚¦12,500.00
+
+â‚¦7,750.00
+
+8 Oct 2026
+
+E035 Â· Sale Â· Restock
+
+â‚¦13,750.00
+
+â‚¦21,500.00
+
+15 Nov 2026
+
+E036 Â· Payment Â· Payment logged
+
+â‚¦20,500.00
+
+â‚¦1,000.00
+
+AGING SUMMARY
+Not yet due
+
+1â€“7 days overdue
+â‚¦1,000.00
+
+8â€“30 days overdue
+â‚¦0.00
+
+CLOSING BALANCE
+PAYMENT INSTRUCTIONS
+Ask at the shop counter for payment details.
+Sample reference only: FICTIONAL-ACCOUNT.
+Fictional shop contact
+Prepared from Marginline Supply Shop's records as of 20 Nov 2026.
+
+31+ days overdue
+â‚¦0.00
+
+â‚¦0.00
+
+â‚¦1,000.00
+
+$ pdfinfo <temporary WSL clone>/out/sample/statements/c8.pdf
+Title:           Customer statement
+Creator:         Hyper Elements
+Producer:        Hyper Elements
+CreationDate:    Fri Nov 20 01:00:00 2026 WAT
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           1
+Encrypted:       no
+Page size:       595.275 x 841.89 pts (A4)
+Page rot:        0
+File size:       22807 bytes
+Optimized:       no
+PDF version:     1.3
+$ pdffonts <temporary WSL clone>/out/sample/statements/c8.pdf
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CZZZZZ+Lato-Bold                     CID TrueType      Identity-H       yes yes yes     11  0
+FZZZZZ+Lato-Regular                  CID TrueType      Identity-H       yes yes yes     12  0
+$ pdftotext -enc UTF-8 <temporary WSL clone>/out/sample/statements/c8.pdf -
+MARGINLINE SUPPLY SHOP
+
+Customer statement
+CUSTOMER
+
+AS OF
+
+Kemi Orven Â· c8
+
+20 Nov 2026
+â‚¦0.00
+
+BALANCE BROUGHT FORWARD
+DATE
+
+ENTRY
+
+AMOUNT
+
+BALANCE
+
+2 Oct 2026
+
+E037 Â· Sale Â· Stock order
+
+â‚¦10,000.00
+
+â‚¦10,000.00
+
+4 Oct 2026
+
+E038 Â· Sale Â· Counter supplies
+
+â‚¦11,250.00
+
+â‚¦21,250.00
+
+6 Oct 2026
+
+E039 Â· Sale Â· Boxed goods
+
+â‚¦12,500.00
+
+â‚¦33,750.00
+
+8 Oct 2026
+
+E040 Â· Sale Â· Restock
+
+â‚¦13,750.00
+
+â‚¦47,500.00
+
+15 Nov 2026
+
+E041 Â· Payment Â· Payment logged
+
+â‚¦27,500.00
+
+â‚¦20,000.00
+
+AGING SUMMARY
+Not yet due
+
+1â€“7 days overdue
+â‚¦0.00
+
+8â€“30 days overdue
+â‚¦20,000.00
+
+CLOSING BALANCE
+PAYMENT INSTRUCTIONS
+Ask at the shop counter for payment details.
+Sample reference only: FICTIONAL-ACCOUNT.
+Fictional shop contact
+Prepared from Marginline Supply Shop's records as of 20 Nov 2026.
+
+31+ days overdue
+â‚¦0.00
+
+â‚¦0.00
+
+â‚¦20,000.00
+
+$ pdftoppm -png -singlefile -r 144 <temporary WSL clone>/out/sample/statements/c3.pdf <temporary WSL clone>/out/sample/screenshots/statement
+$ node --import tsx scripts/screenshot.ts out/sample out/sample/screenshots E015.html
+ledger-390.png {"width":390,"content":390,"lato":true,"desktopTable":false,"mobileRows":true,"wrappingLabels":0}
+ledger-1280.png {"width":1280,"content":1280,"lato":true,"desktopTable":true,"mobileRows":false,"wrappingLabels":0}
+receipt.png {"width":600,"content":600,"lato":true,"desktopTable":false,"mobileRows":false,"wrappingLabels":0}
+receipt-390.png {"width":390,"content":390,"lato":true,"desktopTable":false,"mobileRows":false,"wrappingLabels":0}
+$ pdfinfo <temporary WSL clone>/out/stress-max/statements/max-customer.pdf
+Title:           Customer statement
+Creator:         Hyper Elements
+Producer:        Hyper Elements
+CreationDate:    Fri Nov 20 01:00:00 2026 WAT
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           1
+Encrypted:       no
+Page size:       595.275 x 841.89 pts (A4)
+Page rot:        0
+File size:       24132 bytes
+Optimized:       no
+PDF version:     1.3
+$ pdffonts <temporary WSL clone>/out/stress-max/statements/max-customer.pdf
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CZZZZZ+Lato-Bold                     CID TrueType      Identity-H       yes yes yes     11  0
+FZZZZZ+Lato-Regular                  CID TrueType      Identity-H       yes yes yes     12  0
+$ pdftotext -enc UTF-8 <temporary WSL clone>/out/stress-max/statements/max-customer.pdf -
+MOONFEN STATIONERY AND SUPPLY EMPORIUM
+
+Customer statement
+CUSTOMER
+
+AS OF
+
+Aveline Norem Vasker of Lantern Quay Â· max-customer
+
+20 Nov 2026
+â‚¦499,999,999.95
+
+BALANCE BROUGHT FORWARD
+5 earlier entries not shown
+
+DATE
+
+ENTRY
+
+AMOUNT
+
+BALANCE
+
+6 Oct 2026
+
+MAX6 Â· Sale Â· Fictional bulk order for shop supplies
+and storage inventory
+
+â‚¦99,999,999.99
+
+â‚¦599,999,999.94
+
+7 Oct 2026
+
+MAX7 Â· Sale Â· Fictional bulk order for shop supplies
+and storage inventory
+
+â‚¦99,999,999.99
+
+â‚¦699,999,999.93
+
+8 Oct 2026
+
+MAX8 Â· Sale Â· Fictional bulk order for shop supplies
+and storage inventory
+
+â‚¦99,999,999.99
+
+â‚¦799,999,999.92
+
+9 Oct 2026
+
+MAX9 Â· Sale Â· Fictional bulk order for shop supplies
+and storage inventory
+
+â‚¦99,999,999.99
+
+â‚¦899,999,999.91
+
+10 Oct 2026
+
+MAX10 Â· Sale Â· Fictional bulk order for shop supplies
+and storage inventory
+
+â‚¦0.02
+
+â‚¦899,999,999.93
+
+11 Oct 2026
+
+MAX11 Â· Sale Â· Fictional bulk order for shop supplies
+and storage inventory
+
+â‚¦0.01
+
+â‚¦899,999,999.94
+
+12 Oct 2026
+
+MAX12 Â· Sale Â· Fictional bulk order for shop supplies
+and storage inventory
+
+â‚¦0.02
+
+â‚¦899,999,999.96
+
+13 Oct 2026
+
+MAX13 Â· Sale Â· Fictional bulk order for shop supplies
+and storage inventory
+
+â‚¦0.02
+
+â‚¦899,999,999.98
+
+14 Oct 2026
+
+MAX14 Â· Sale Â· Fictional bulk order for shop supplies
+and storage inventory
+
+â‚¦0.01
+
+â‚¦899,999,999.99
+
+15 Oct 2026
+
+MAX15 Â· Sale Â· Fictional bulk order for shop supplies
+and storage inventory
+
+â‚¦0.02
+
+â‚¦900,000,000.01
+
+15 Oct 2026
+
+MAXPAY Â· Payment Â· Fictional partial settlement
+
+â‚¦0.01
+
+â‚¦900,000,000.00
+
+16 Oct 2026
+
+MAX16 Â· Sale Â· Fictional bulk order for shop supplies
+and storage inventory
+
+â‚¦99,999,999.99
+
+â‚¦999,999,999.99
+
+AGING SUMMARY
+Not yet due
+
+1â€“7 days overdue
+â‚¦0.00
+
+8â€“30 days overdue
+â‚¦0.00
+
+CLOSING BALANCE
+PAYMENT INSTRUCTIONS
+Fictional reference only: DEMO-ACCOUNT.
+Prepared from Moonfen Stationery and Supply Emporium's records as of 20 Nov 2026.
+
+â‚¦0.00
+
+31+ days overdue
+â‚¦999,999,999.99
+
+â‚¦999,999,999.99
+
+$ pdftoppm -png -singlefile -r 144 <temporary WSL clone>/out/stress-max/statements/max-customer.pdf <temporary WSL clone>/out/stress-max/screenshots/statement
+$ node --import tsx scripts/screenshot.ts out/stress-max out/stress-max/screenshots MAXPAY.html --wide
+ledger-390.png {"width":390,"content":390,"lato":true,"desktopTable":false,"mobileRows":true,"wrappingLabels":0}
+ledger-1280.png {"width":1280,"content":1280,"lato":true,"desktopTable":true,"mobileRows":false,"wrappingLabels":0}
+receipt.png {"width":600,"content":600,"lato":true,"desktopTable":false,"mobileRows":false,"wrappingLabels":0}
+receipt-390.png {"width":390,"content":390,"lato":true,"desktopTable":false,"mobileRows":false,"wrappingLabels":0}
+receipt-1280.png {"width":1280,"content":1280,"lato":true,"desktopTable":false,"mobileRows":false,"wrappingLabels":0}
+$ pdfinfo <temporary WSL clone>/out/stress-min/statements/min-customer.pdf
+Title:           Customer statement
+Creator:         Hyper Elements
+Producer:        Hyper Elements
+CreationDate:    Fri Nov 20 01:00:00 2026 WAT
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           1
+Encrypted:       no
+Page size:       595.275 x 841.89 pts (A4)
+Page rot:        0
+File size:       20922 bytes
+Optimized:       no
+PDF version:     1.3
+$ pdffonts <temporary WSL clone>/out/stress-min/statements/min-customer.pdf
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CZZZZZ+Lato-Bold                     CID TrueType      Identity-H       yes yes yes     11  0
+FZZZZZ+Lato-Regular                  CID TrueType      Identity-H       yes yes yes     12  0
+$ pdftotext -enc UTF-8 <temporary WSL clone>/out/stress-min/statements/min-customer.pdf -
+MOTHFEN SAMPLE SHOP
+
+Customer statement
+CUSTOMER
+
+AS OF
+
+Vela Nyren Â· min-customer
+
+20 Nov 2026
+â‚¦0.00
+
+BALANCE BROUGHT FORWARD
+DATE
+
+ENTRY
+
+AMOUNT
+
+BALANCE
+
+1 Nov 2026
+
+MIN1 Â· Sale Â· Fictional sale
+
+â‚¦10.00
+
+â‚¦10.00
+
+4 Nov 2026
+
+MIN2 Â· Payment Â· Fictional partial payment
+
+â‚¦4.00
+
+â‚¦6.00
+
+20 Nov 2026
+
+MIN3 Â· Payment Â· Fictional final payment
+
+â‚¦6.00
+
+â‚¦0.00
+
+AGING SUMMARY
+Not yet due
+
+1â€“7 days overdue
+â‚¦0.00
+
+8â€“30 days overdue
+â‚¦0.00
+
+CLOSING BALANCE
+PAYMENT INSTRUCTIONS
+Fictional reference only: DEMO-ACCOUNT.
+Prepared from Mothfen Sample Shop's records as of 20 Nov 2026.
+
+31+ days overdue
+â‚¦0.00
+
+â‚¦0.00
+
+â‚¦0.00
+
+$ pdftoppm -png -singlefile -r 144 <temporary WSL clone>/out/stress-min/statements/min-customer.pdf <temporary WSL clone>/out/stress-min/screenshots/statement
+$ node --import tsx scripts/screenshot.ts out/stress-min out/stress-min/screenshots MIN3.html --wide
+ledger-390.png {"width":390,"content":390,"lato":true,"desktopTable":false,"mobileRows":true,"wrappingLabels":0}
+ledger-1280.png {"width":1280,"content":1280,"lato":true,"desktopTable":true,"mobileRows":false,"wrappingLabels":0}
+receipt.png {"width":600,"content":600,"lato":true,"desktopTable":false,"mobileRows":false,"wrappingLabels":0}
+receipt-390.png {"width":390,"content":390,"lato":true,"desktopTable":false,"mobileRows":false,"wrappingLabels":0}
+receipt-1280.png {"width":1280,"content":1280,"lato":true,"desktopTable":false,"mobileRows":false,"wrappingLabels":0}
+$ pdfinfo <temporary WSL clone>/out/currency-usd/statements/fen.pdf
+Title:           Customer statement
+Creator:         Hyper Elements
+Producer:        Hyper Elements
+CreationDate:    Fri Nov 20 01:00:00 2026 WAT
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           1
+Encrypted:       no
+Page size:       595.275 x 841.89 pts (A4)
+Page rot:        0
+File size:       21873 bytes
+Optimized:       no
+PDF version:     1.3
+$ pdffonts <temporary WSL clone>/out/currency-usd/statements/fen.pdf
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CZZZZZ+Lato-Bold                     CID TrueType      Identity-H       yes yes yes     11  0
+FZZZZZ+Lato-Regular                  CID TrueType      Identity-H       yes yes yes     12  0
+$ pdftotext -enc UTF-8 <temporary WSL clone>/out/currency-usd/statements/fen.pdf -
+LARKFEN SUPPLY SHOP
+
+Customer statement
+CUSTOMER
+
+AS OF
+
+Fenna Voss Â· fen
+
+20 Nov 2026
+$0.00
+
+BALANCE BROUGHT FORWARD
+DATE
+
+ENTRY
+
+1 Oct 2026
+
+D01 Â· Sale Â· Fictional stock order
+
+10 Nov 2026
+
+D02 Â· Payment Â· Fictional part payment
+
+AMOUNT
+
+BALANCE
+
+$1,500.25
+
+$1,500.25
+
+$400.00
+
+$1,100.25
+
+AGING SUMMARY
+Not yet due
+
+1â€“7 days overdue
+$0.00
+
+CLOSING BALANCE
+PAYMENT INSTRUCTIONS
+Fictional reference only: DEMO-ACCOUNT.
+Prepared from Larkfen Supply Shop's records as of 20 Nov 2026.
+
+8â€“30 days overdue
+$0.00
+
+31+ days overdue
+$0.00
+
+$1,100.25
+
+$1,100.25
+
+$ pdfinfo <temporary WSL clone>/out/currency-usd/statements/roan.pdf
+Title:           Customer statement
+Creator:         Hyper Elements
+Producer:        Hyper Elements
+CreationDate:    Fri Nov 20 01:00:00 2026 WAT
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           1
+Encrypted:       no
+Page size:       595.275 x 841.89 pts (A4)
+Page rot:        0
+File size:       21242 bytes
+Optimized:       no
+PDF version:     1.3
+$ pdffonts <temporary WSL clone>/out/currency-usd/statements/roan.pdf
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CZZZZZ+Lato-Bold                     CID TrueType      Identity-H       yes yes yes     11  0
+FZZZZZ+Lato-Regular                  CID TrueType      Identity-H       yes yes yes     12  0
+$ pdftotext -enc UTF-8 <temporary WSL clone>/out/currency-usd/statements/roan.pdf -
+LARKFEN SUPPLY SHOP
+
+Customer statement
+CUSTOMER
+
+AS OF
+
+Roan Elver Â· roan
+
+20 Nov 2026
+$0.00
+
+BALANCE BROUGHT FORWARD
+DATE
+
+ENTRY
+
+AMOUNT
+
+BALANCE
+
+1 Nov 2026
+
+D03 Â· Sale Â· Fictional stock order
+
+$700.00
+
+$700.00
+
+10 Nov 2026
+
+D04 Â· Payment Â· Fictional overpayment
+
+$800.00
+
+$100.00 CR
+
+AGING SUMMARY
+Not yet due
+
+1â€“7 days overdue
+$0.00
+
+CREDIT ON ACCOUNT
+PAYMENT INSTRUCTIONS
+Fictional reference only: DEMO-ACCOUNT.
+Prepared from Larkfen Supply Shop's records as of 20 Nov 2026.
+
+8â€“30 days overdue
+$0.00
+
+31+ days overdue
+$0.00
+
+$0.00
+
+$100.00 CR
+
+$ pdfinfo <temporary WSL clone>/out/currency-usd/statements/tavi.pdf
+Title:           Customer statement
+Creator:         Hyper Elements
+Producer:        Hyper Elements
+CreationDate:    Fri Nov 20 01:00:00 2026 WAT
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           1
+Encrypted:       no
+Page size:       595.275 x 841.89 pts (A4)
+Page rot:        0
+File size:       21252 bytes
+Optimized:       no
+PDF version:     1.3
+$ pdffonts <temporary WSL clone>/out/currency-usd/statements/tavi.pdf
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CZZZZZ+Lato-Bold                     CID TrueType      Identity-H       yes yes yes     11  0
+FZZZZZ+Lato-Regular                  CID TrueType      Identity-H       yes yes yes     12  0
+$ pdftotext -enc UTF-8 <temporary WSL clone>/out/currency-usd/statements/tavi.pdf -
+LARKFEN SUPPLY SHOP
+
+Customer statement
+CUSTOMER
+
+AS OF
+
+Tavi Selven Â· tavi
+
+20 Nov 2026
+$0.00
+
+BALANCE BROUGHT FORWARD
+DATE
+
+ENTRY
+
+15 Nov 2026
+
+D05 Â· Sale Â· Fictional stock order
+
+AMOUNT
+
+BALANCE
+
+$250.00
+
+$250.00
+
+AGING SUMMARY
+Not yet due
+
+1â€“7 days overdue
+$250.00
+
+CLOSING BALANCE
+PAYMENT INSTRUCTIONS
+Fictional reference only: DEMO-ACCOUNT.
+Prepared from Larkfen Supply Shop's records as of 20 Nov 2026.
+
+8â€“30 days overdue
+$0.00
+
+31+ days overdue
+$0.00
+
+$0.00
+
+$250.00
+
+$ pdftoppm -png -singlefile -r 144 <temporary WSL clone>/out/currency-usd/statements/fen.pdf <temporary WSL clone>/out/currency-usd/screenshots/statement
+$ node --import tsx scripts/screenshot.ts out/currency-usd out/currency-usd/screenshots D02.html --wide
+ledger-390.png {"width":390,"content":390,"lato":true,"desktopTable":false,"mobileRows":true,"wrappingLabels":0}
+ledger-1280.png {"width":1280,"content":1280,"lato":true,"desktopTable":true,"mobileRows":false,"wrappingLabels":0}
+receipt.png {"width":600,"content":600,"lato":true,"desktopTable":false,"mobileRows":false,"wrappingLabels":0}
+receipt-390.png {"width":390,"content":390,"lato":true,"desktopTable":false,"mobileRows":false,"wrappingLabels":0}
+receipt-1280.png {"width":1280,"content":1280,"lato":true,"desktopTable":false,"mobileRows":false,"wrappingLabels":0}
+$ pdfinfo <temporary WSL clone>/out/currency-jpy/statements/fen.pdf
+Title:           Customer statement
+Creator:         Hyper Elements
+Producer:        Hyper Elements
+CreationDate:    Fri Nov 20 01:00:00 2026 WAT
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           1
+Encrypted:       no
+Page size:       595.275 x 841.89 pts (A4)
+Page rot:        0
+File size:       21110 bytes
+Optimized:       no
+PDF version:     1.3
+$ pdffonts <temporary WSL clone>/out/currency-jpy/statements/fen.pdf
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CZZZZZ+Lato-Bold                     CID TrueType      Identity-H       yes yes yes     11  0
+FZZZZZ+Lato-Regular                  CID TrueType      Identity-H       yes yes yes     12  0
+$ pdftotext -enc UTF-8 <temporary WSL clone>/out/currency-jpy/statements/fen.pdf -
+LARKFEN SUPPLY SHOP
+
+Customer statement
+CUSTOMER
+
+AS OF
+
+Fenna Voss Â· fen
+
+20 Nov 2026
+Â¥0
+
+BALANCE BROUGHT FORWARD
+DATE
+
+ENTRY
+
+1 Oct 2026
+
+D01 Â· Sale Â· Fictional stock order
+
+10 Nov 2026
+
+D02 Â· Payment Â· Fictional part payment
+
+AMOUNT
+
+BALANCE
+
+Â¥1,500
+
+Â¥1,500
+
+Â¥400
+
+Â¥1,100
+
+AGING SUMMARY
+Not yet due
+
+1â€“7 days overdue
+Â¥0
+
+CLOSING BALANCE
+PAYMENT INSTRUCTIONS
+Fictional reference only: DEMO-ACCOUNT.
+Prepared from Larkfen Supply Shop's records as of 20 Nov 2026.
+
+8â€“30 days overdue
+Â¥0
+
+31+ days overdue
+Â¥0
+
+Â¥1,100
+
+Â¥1,100
+
+$ pdfinfo <temporary WSL clone>/out/currency-jpy/statements/roan.pdf
+Title:           Customer statement
+Creator:         Hyper Elements
+Producer:        Hyper Elements
+CreationDate:    Fri Nov 20 01:00:00 2026 WAT
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           1
+Encrypted:       no
+Page size:       595.275 x 841.89 pts (A4)
+Page rot:        0
+File size:       20798 bytes
+Optimized:       no
+PDF version:     1.3
+$ pdffonts <temporary WSL clone>/out/currency-jpy/statements/roan.pdf
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CZZZZZ+Lato-Bold                     CID TrueType      Identity-H       yes yes yes     11  0
+FZZZZZ+Lato-Regular                  CID TrueType      Identity-H       yes yes yes     12  0
+$ pdftotext -enc UTF-8 <temporary WSL clone>/out/currency-jpy/statements/roan.pdf -
+LARKFEN SUPPLY SHOP
+
+Customer statement
+CUSTOMER
+
+AS OF
+
+Roan Elver Â· roan
+
+20 Nov 2026
+Â¥0
+
+BALANCE BROUGHT FORWARD
+DATE
+
+ENTRY
+
+AMOUNT
+
+BALANCE
+
+1 Nov 2026
+
+D03 Â· Sale Â· Fictional stock order
+
+Â¥700
+
+Â¥700
+
+10 Nov 2026
+
+D04 Â· Payment Â· Fictional overpayment
+
+Â¥800
+
+Â¥100 CR
+
+AGING SUMMARY
+Not yet due
+
+1â€“7 days overdue
+Â¥0
+
+CREDIT ON ACCOUNT
+PAYMENT INSTRUCTIONS
+Fictional reference only: DEMO-ACCOUNT.
+Prepared from Larkfen Supply Shop's records as of 20 Nov 2026.
+
+8â€“30 days overdue
+Â¥0
+
+31+ days overdue
+Â¥0
+
+Â¥0
+
+Â¥100 CR
+
+$ pdfinfo <temporary WSL clone>/out/currency-jpy/statements/tavi.pdf
+Title:           Customer statement
+Creator:         Hyper Elements
+Producer:        Hyper Elements
+CreationDate:    Fri Nov 20 01:00:00 2026 WAT
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           1
+Encrypted:       no
+Page size:       595.275 x 841.89 pts (A4)
+Page rot:        0
+File size:       20814 bytes
+Optimized:       no
+PDF version:     1.3
+$ pdffonts <temporary WSL clone>/out/currency-jpy/statements/tavi.pdf
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CZZZZZ+Lato-Bold                     CID TrueType      Identity-H       yes yes yes     11  0
+FZZZZZ+Lato-Regular                  CID TrueType      Identity-H       yes yes yes     12  0
+$ pdftotext -enc UTF-8 <temporary WSL clone>/out/currency-jpy/statements/tavi.pdf -
+LARKFEN SUPPLY SHOP
+
+Customer statement
+CUSTOMER
+
+AS OF
+
+Tavi Selven Â· tavi
+
+20 Nov 2026
+Â¥0
+
+BALANCE BROUGHT FORWARD
+DATE
+
+ENTRY
+
+15 Nov 2026
+
+D05 Â· Sale Â· Fictional stock order
+
+AMOUNT
+
+BALANCE
+
+Â¥250
+
+Â¥250
+
+AGING SUMMARY
+Not yet due
+
+1â€“7 days overdue
+Â¥250
+
+CLOSING BALANCE
+PAYMENT INSTRUCTIONS
+Fictional reference only: DEMO-ACCOUNT.
+Prepared from Larkfen Supply Shop's records as of 20 Nov 2026.
+
+8â€“30 days overdue
+Â¥0
+
+31+ days overdue
+Â¥0
+
+Â¥0
+
+Â¥250
+
+$ pdftoppm -png -singlefile -r 144 <temporary WSL clone>/out/currency-jpy/statements/fen.pdf <temporary WSL clone>/out/currency-jpy/screenshots/statement
+$ node --import tsx scripts/screenshot.ts out/currency-jpy out/currency-jpy/screenshots D02.html --wide
+ledger-390.png {"width":390,"content":390,"lato":true,"desktopTable":false,"mobileRows":true,"wrappingLabels":0}
+ledger-1280.png {"width":1280,"content":1280,"lato":true,"desktopTable":true,"mobileRows":false,"wrappingLabels":0}
+receipt.png {"width":600,"content":600,"lato":true,"desktopTable":false,"mobileRows":false,"wrappingLabels":0}
+receipt-390.png {"width":390,"content":390,"lato":true,"desktopTable":false,"mobileRows":false,"wrappingLabels":0}
+receipt-1280.png {"width":1280,"content":1280,"lato":true,"desktopTable":false,"mobileRows":false,"wrappingLabels":0}
+npm run verify:full exit code: 0
++ printf '%s exit code: %s\n' 'npm run verify:full' 0
++ return 0
+WSL overall exit code: 0

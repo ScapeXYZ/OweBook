@@ -1,0 +1,59 @@
+code commit: db5d3748c2ac4cc38008fc23c65d82b163394e3a
+
+
+> owebook@1.0.0 test
+> tsx --test tests/*.test.ts
+
+✔ black on white is 21:1 (2.3699ms)
+✔ parse "15000" (3.8868ms)
+✔ parse "15000.5" (0.3953ms)
+✔ parse "15000.50" (0.1925ms)
+✔ parse "0.05" (0.1659ms)
+✔ parse " \t0.05 " (0.205ms)
+✔ reject "15000.505" (0.501ms)
+✔ reject "15000.500" (0.1885ms)
+✔ reject ".5" (0.2046ms)
+✔ reject "1." (0.2277ms)
+✔ reject "1,000" (0.3119ms)
+✔ reject "-5" (0.2549ms)
+✔ reject "1e3" (0.1789ms)
+✔ reject "$5" (0.1207ms)
+✔ reject "" (0.1202ms)
+✔ reject "0" (0.1093ms)
+✔ reject "0.00" (0.1563ms)
+✔ zero minor units (0.2316ms)
+✔ amount and safe sum boundaries (0.28ms)
+✔ CSV data row boundary (18.1348ms)
+✔ CSV BOM, CRLF, blank lines, commas and escaped quotes (9.2723ms)
+✔ partial settlement and FIFO by due override (1.8741ms)
+✔ FIFO breaks ties by sale date then file order (0.3607ms)
+✔ overpayment creates credit, and next sale consumes it (0.88ms)
+✔ prepayment (0.3218ms)
+✔ same-day sales precede earlier-listed payments (0.3303ms)
+✔ due today and aging edges (0.3705ms)
+✔ terms precedence (0.2469ms)
+✔ formatters and calendar validation (1.4719ms)
+✔ validates multiple issues with row and file, capped at twenty (7.5942ms)
+✔ future transactions excluded and warnings counted; deterministic summary (0.71ms)
+✔ D9 three minor units parse and format 1.250 and reject 1.2501 (3.7678ms)
+✔ D9 zero minor units display JPY without decimals and reject 100.0 (0.5043ms)
+✔ F1 transaction maximum and one above with CSV row (5.0197ms)
+✔ F1 currency symbol maximum and one above with shop row (2.5284ms)
+✔ F1 customer absolute balance maximum and one above (3.4545ms)
+✔ F1 customer credit and negative balance maximum and one above (0.6038ms)
+✔ F1 customer overdue maximum and one above (0.3ms)
+✔ F1 shop outstanding maximum and one above (7.3382ms)
+✔ F1 shop overdue maximum and one above (3.7909ms)
+✔ F1 shop credit maximum and one above use total_credit (4.5876ms)
+✔ S3 sample summary schema and total_credit (20.1212ms)
+✔ S3 stress-max summary schema and total_credit (3.2808ms)
+✔ S3 stress-min summary schema and total_credit (2.0092ms)
+✔ S7 sample summary-only command writes one file byte-identical to build (15833.2528ms)
+ℹ tests 45
+ℹ suites 0
+ℹ pass 45
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 16593.4428

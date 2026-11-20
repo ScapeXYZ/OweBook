@@ -1,0 +1,7 @@
+code commit: db5d3748c2ac4cc38008fc23c65d82b163394e3a
+
+The local Git repository cloned successfully into a new temporary WSL directory.
+node --version: v20.20.2
+npm --version: 10.8.2
+
+Stopped at the README toolchain prerequisite. The README specifies Node 24.14.1 and npm 11.18.0. No npm ci result or subsequent verification was recorded for the clone.

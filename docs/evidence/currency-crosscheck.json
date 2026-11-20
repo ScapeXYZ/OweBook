@@ -1,0 +1,21 @@
+{
+  "provenance": "code commit: db5d3748c2ac4cc38008fc23c65d82b163394e3a",
+  "as_of": "2026-11-20",
+  "sets": {
+    "currency-usd": 3,
+    "currency-jpy": 3
+  },
+  "diff_count": 0,
+  "diffs": [],
+  "mapping": {
+    "amounts": "integer minor units",
+    "aging": [
+      "not_due",
+      "1_7",
+      "8_30",
+      "31_plus"
+    ],
+    "dates": "days since 1970-01-01",
+    "shop_credit": "required by Claude spec; may be absent in existing summary schema"
+  }
+}

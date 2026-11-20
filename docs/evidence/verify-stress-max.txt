@@ -1,0 +1,272 @@
+code commit: db5d3748c2ac4cc38008fc23c65d82b163394e3a
+
+
+> owebook@1.0.0 verify
+> tsx scripts/verify.ts data/stress-max 2026-11-20 out/stress-max
+
+$ node node_modules/typescript/bin/tsc -p tsconfig.json
+$ node --import tsx --test tests/*.test.ts
+✔ black on white is 21:1 (5.1172ms)
+✔ parse "15000" (10.3598ms)
+✔ parse "15000.5" (0.9352ms)
+✔ parse "15000.50" (0.4497ms)
+✔ parse "0.05" (0.3486ms)
+✔ parse " \t0.05 " (0.7773ms)
+✔ reject "15000.505" (3.7077ms)
+✔ reject "15000.500" (0.7553ms)
+✔ reject ".5" (7.5093ms)
+✔ reject "1." (0.8714ms)
+✔ reject "1,000" (2.7503ms)
+✔ reject "-5" (16.2472ms)
+✔ reject "1e3" (5.9168ms)
+✔ reject "$5" (0.6592ms)
+✔ reject "" (0.2505ms)
+✔ reject "0" (31.8817ms)
+✔ reject "0.00" (0.5482ms)
+✔ zero minor units (0.6326ms)
+✔ amount and safe sum boundaries (2.4126ms)
+✔ CSV data row boundary (84.0527ms)
+✔ CSV BOM, CRLF, blank lines, commas and escaped quotes (11.2364ms)
+✔ partial settlement and FIFO by due override (3.0204ms)
+✔ FIFO breaks ties by sale date then file order (1.0216ms)
+✔ overpayment creates credit, and next sale consumes it (0.9929ms)
+✔ prepayment (0.4704ms)
+✔ same-day sales precede earlier-listed payments (0.5609ms)
+✔ due today and aging edges (0.7834ms)
+✔ terms precedence (0.5607ms)
+✔ formatters and calendar validation (3.6385ms)
+✔ validates multiple issues with row and file, capped at twenty (78.2127ms)
+✔ future transactions excluded and warnings counted; deterministic summary (30.6013ms)
+✔ D9 three minor units parse and format 1.250 and reject 1.2501 (11.1077ms)
+✔ D9 zero minor units display JPY without decimals and reject 100.0 (1.2602ms)
+✔ F1 transaction maximum and one above with CSV row (14.7454ms)
+✔ F1 currency symbol maximum and one above with shop row (5.2244ms)
+✔ F1 customer absolute balance maximum and one above (10.2661ms)
+✔ F1 customer credit and negative balance maximum and one above (1.3003ms)
+✔ F1 customer overdue maximum and one above (1.3711ms)
+✔ F1 shop outstanding maximum and one above (29.369ms)
+✔ F1 shop overdue maximum and one above (123.4467ms)
+✔ F1 shop credit maximum and one above use total_credit (30.5146ms)
+✔ S3 sample summary schema and total_credit (149.6225ms)
+✔ S3 stress-max summary schema and total_credit (19.8185ms)
+✔ S3 stress-min summary schema and total_credit (7.517ms)
+✔ S7 sample summary-only command writes one file byte-identical to build (19428.5176ms)
+ℹ tests 45
+ℹ suites 0
+ℹ pass 45
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 20611.4907
+$ node --import tsx scripts/contrast.ts
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+$ node --import tsx scripts/build.tsx --data data/stress-max --as-of 2026-11-20 --out out/stress-max
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+{"checked":5,"errors":0,"warnings":0,"info":16}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/ledger.tsx --props out\stress-max\evidence\ledger-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/ledger.tsx","input":"template","root":"Page","status":"ok","outputs":[],"diagnostics":[{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/reminder.tsx --props out\stress-max\evidence\reminder-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/reminder.tsx","input":"template","root":"Canvas","status":"ok","outputs":[],"diagnostics":[]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/receipt.tsx --props out\stress-max\evidence\receipt-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/receipt.tsx","input":"template","root":"Email","status":"ok","outputs":[],"diagnostics":[{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Heading in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[7].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[10].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[10].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 13px, under 14px","path":"root.children[0].children[11]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ wsl.exe --exec wslpath -a out/stress-max/statements/max-customer.pdf
+out/stress-max/statements/max-customer.pdf
+$ wsl.exe --exec pdfinfo out/stress-max/statements/max-customer.pdf
+Title:           Customer statement
+Creator:         Hyper Elements
+Producer:        Hyper Elements
+CreationDate:    Fri Nov 20 01:00:00 2026 WAT
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           1
+Encrypted:       no
+Page size:       595.275 x 841.89 pts (A4)
+Page rot:        0
+File size:       24132 bytes
+Optimized:       no
+PDF version:     1.3
+$ wsl.exe --exec pdffonts out/stress-max/statements/max-customer.pdf
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CZZZZZ+Lato-Bold                     CID TrueType      Identity-H       yes yes yes     11  0
+FZZZZZ+Lato-Regular                  CID TrueType      Identity-H       yes yes yes     12  0
+$ wsl.exe --exec pdftotext -enc UTF-8 out/stress-max/statements/max-customer.pdf -
+MOONFEN STATIONERY AND SUPPLY EMPORIUM
+
+Customer statement
+CUSTOMER
+
+AS OF
+
+Aveline Norem Vasker of Lantern Quay · max-customer
+
+20 Nov 2026
+₦499,999,999.95
+
+BALANCE BROUGHT FORWARD
+5 earlier entries not shown
+
+DATE
+
+ENTRY
+
+AMOUNT
+
+BALANCE
+
+6 Oct 2026
+
+MAX6 · Sale · Fictional bulk order for shop supplies
+and storage inventory
+
+₦99,999,999.99
+
+₦599,999,999.94
+
+7 Oct 2026
+
+MAX7 · Sale · Fictional bulk order for shop supplies
+and storage inventory
+
+₦99,999,999.99
+
+₦699,999,999.93
+
+8 Oct 2026
+
+MAX8 · Sale · Fictional bulk order for shop supplies
+and storage inventory
+
+₦99,999,999.99
+
+₦799,999,999.92
+
+9 Oct 2026
+
+MAX9 · Sale · Fictional bulk order for shop supplies
+and storage inventory
+
+₦99,999,999.99
+
+₦899,999,999.91
+
+10 Oct 2026
+
+MAX10 · Sale · Fictional bulk order for shop supplies
+and storage inventory
+
+₦0.02
+
+₦899,999,999.93
+
+11 Oct 2026
+
+MAX11 · Sale · Fictional bulk order for shop supplies
+and storage inventory
+
+₦0.01
+
+₦899,999,999.94
+
+12 Oct 2026
+
+MAX12 · Sale · Fictional bulk order for shop supplies
+and storage inventory
+
+₦0.02
+
+₦899,999,999.96
+
+13 Oct 2026
+
+MAX13 · Sale · Fictional bulk order for shop supplies
+and storage inventory
+
+₦0.02
+
+₦899,999,999.98
+
+14 Oct 2026
+
+MAX14 · Sale · Fictional bulk order for shop supplies
+and storage inventory
+
+₦0.01
+
+₦899,999,999.99
+
+15 Oct 2026
+
+MAX15 · Sale · Fictional bulk order for shop supplies
+and storage inventory
+
+₦0.02
+
+₦900,000,000.01
+
+15 Oct 2026
+
+MAXPAY · Payment · Fictional partial settlement
+
+₦0.01
+
+₦900,000,000.00
+
+16 Oct 2026
+
+MAX16 · Sale · Fictional bulk order for shop supplies
+and storage inventory
+
+₦99,999,999.99
+
+₦999,999,999.99
+
+AGING SUMMARY
+Not yet due
+
+1–7 days overdue
+₦0.00
+
+8–30 days overdue
+₦0.00
+
+CLOSING BALANCE
+PAYMENT INSTRUCTIONS
+Fictional reference only: DEMO-ACCOUNT.
+Prepared from Moonfen Stationery and Supply Emporium's records as of 20 Nov 2026.
+
+₦0.00
+
+31+ days overdue
+₦999,999,999.99
+
+₦999,999,999.99
+
+$ wsl.exe --exec wslpath -a out/stress-max/statements/max-customer.pdf
+out/stress-max/statements/max-customer.pdf
+$ wsl.exe --exec wslpath -a out/stress-max/screenshots/statement
+out/stress-max/screenshots/statement
+$ wsl.exe --exec pdftoppm -png -singlefile -r 144 out/stress-max/statements/max-customer.pdf out/stress-max/screenshots/statement
+$ node --import tsx scripts/screenshot.ts out/stress-max out\stress-max\screenshots MAXPAY.html --wide
+ledger-390.png {"width":390,"content":390,"lato":true,"desktopTable":false,"mobileRows":true,"wrappingLabels":0}
+ledger-1280.png {"width":1280,"content":1280,"lato":true,"desktopTable":true,"mobileRows":false,"wrappingLabels":0}
+receipt.png {"width":600,"content":600,"lato":true,"desktopTable":false,"mobileRows":false,"wrappingLabels":0}
+receipt-390.png {"width":390,"content":390,"lato":true,"desktopTable":false,"mobileRows":false,"wrappingLabels":0}
+receipt-1280.png {"width":1280,"content":1280,"lato":true,"desktopTable":false,"mobileRows":false,"wrappingLabels":0}

@@ -1,0 +1,21 @@
+{
+  "provenance": "code commit: db5d3748c2ac4cc38008fc23c65d82b163394e3a",
+  "measurements": [
+    {
+      "case": "gutter-stress-max",
+      "amount": "₦99,999,999.99",
+      "balance": "₦999,999,999.99",
+      "amount_xMax": 417.585251,
+      "balance_xMin": 495.12229,
+      "gap_pt": 77.537039
+    },
+    {
+      "case": "gutter-credit",
+      "amount": "WWW9,999,999,999",
+      "balance": "WWW99,999,999,999",
+      "amount_xMax": 417.585251,
+      "balance_xMin": 463.35154,
+      "gap_pt": 45.766289
+    }
+  ]
+}

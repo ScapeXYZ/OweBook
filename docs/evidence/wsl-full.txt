@@ -1,0 +1,4 @@
+code commit: cffdce2caa50274f1ee777dc543fb9ce4dfa86e7
+
+bash: line 1: cd: <temporary WSL clone>: No such file or directory
+WSL full exit code: 1

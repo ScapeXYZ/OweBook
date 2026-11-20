@@ -1,0 +1,77 @@
+code commit: cffdce2caa50274f1ee777dc543fb9ce4dfa86e7
+
+
+> owebook@1.0.0 verify
+> tsx scripts/verify.ts
+
+$ node node_modules/typescript/bin/tsc -p tsconfig.json
+$ node --import tsx scripts/test.ts
+✔ black on white is 21:1 (1.1853ms)
+✔ parse "15000" (2.7991ms)
+✔ parse "15000.5" (0.3386ms)
+✔ parse "15000.50" (0.2135ms)
+✔ parse "0.05" (0.1905ms)
+✔ parse " \t0.05 " (0.1944ms)
+✔ reject "15000.505" (0.7258ms)
+✔ reject "15000.500" (0.2578ms)
+✔ reject ".5" (0.228ms)
+✔ reject "1." (0.2062ms)
+✔ reject "1,000" (0.2853ms)
+✔ reject "-5" (0.2401ms)
+✔ reject "1e3" (1.3999ms)
+✔ reject "$5" (0.1945ms)
+✔ reject "" (0.1258ms)
+✔ reject "0" (0.1233ms)
+✔ reject "0.00" (0.1175ms)
+✔ zero minor units (0.2592ms)
+✔ amount and safe sum boundaries (0.2936ms)
+✔ CSV data row boundary (10.477ms)
+✔ CSV BOM, CRLF, blank lines, commas and escaped quotes (2.7116ms)
+✔ partial settlement and FIFO by due override (1.78ms)
+✔ FIFO breaks ties by sale date then file order (0.3871ms)
+✔ overpayment creates credit, and next sale consumes it (0.4997ms)
+✔ prepayment (0.2149ms)
+✔ same-day sales precede earlier-listed payments (0.3481ms)
+✔ due today and aging edges (0.2669ms)
+✔ terms precedence (0.1727ms)
+✔ formatters and calendar validation (0.8385ms)
+✔ validates multiple issues with row and file, capped at twenty (4.064ms)
+✔ future transactions excluded and warnings counted; deterministic summary (0.8014ms)
+✔ D9 three minor units parse and format 1.250 and reject 1.2501 (2.0682ms)
+✔ D9 zero minor units display JPY without decimals and reject 100.0 (0.5334ms)
+✔ F1 transaction maximum and one above with CSV row (3.9026ms)
+✔ F1 currency symbol maximum and one above with shop row (1.323ms)
+✔ F1 customer absolute balance maximum and one above (2.4399ms)
+✔ F1 customer credit and negative balance maximum and one above (0.6732ms)
+✔ F1 customer overdue maximum and one above (0.4833ms)
+✔ F1 shop outstanding maximum and one above (9.6406ms)
+✔ F1 shop overdue maximum and one above (5.9766ms)
+✔ F1 shop credit maximum and one above use total_credit (5.3569ms)
+✔ S3 sample summary schema and total_credit (17.904ms)
+✔ S3 stress-max summary schema and total_credit (6.2697ms)
+✔ S3 stress-min summary schema and total_credit (2.5914ms)
+✔ S7 sample summary-only command writes one file byte-identical to build (3605.9859ms)
+ℹ tests 45
+ℹ suites 0
+ℹ pass 45
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4130.862
+$ node --import tsx scripts/contrast.ts
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+$ node --import tsx scripts/build.tsx --data data/sample --as-of 2026-11-20 --out out/sample
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+{"checked":29,"errors":0,"warnings":0,"info":66}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/ledger.tsx --props out\sample\evidence\ledger-props.json --rendered --json
+
+Interrupted after the WSL full-tier invocation failed. No Windows verification exit result was recorded.

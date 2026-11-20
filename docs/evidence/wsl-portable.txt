@@ -1,0 +1,379 @@
+code commit: cffdce2caa50274f1ee777dc543fb9ce4dfa86e7
+
++ source=<local repository>
+++ git -C <local repository> rev-parse HEAD
++ source_head=cffdce2caa50274f1ee777dc543fb9ce4dfa86e7
+++ mktemp -d <temporary WSL clone>
++ dest=<temporary WSL clone>
++ git clone --no-local <local repository> <temporary WSL clone>
+Cloning into '<temporary WSL clone>'...
++ cd <temporary WSL clone>
+++ git rev-parse HEAD
++ clone_head=cffdce2caa50274f1ee777dc543fb9ce4dfa86e7
++ test cffdce2caa50274f1ee777dc543fb9ce4dfa86e7 = cffdce2caa50274f1ee777dc543fb9ce4dfa86e7
++ node --version
+v20.20.2
++ npm --version
+10.8.2
+++ node --version
++ test v20.20.2 = v20.20.2
+++ npm --version
++ test 10.8.2 = 10.8.2
++ npm ci
+
+added 101 packages, and audited 102 packages in 6s
+
+5 packages are looking for funding
+  run `npm fund` for details
+
+6 moderate severity vulnerabilities
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
++ install_status=0
++ printf 'npm ci exit code: %s\n' 0
+npm ci exit code: 0
++ test 0 -eq 0
++ npm run verify
+
+> owebook@1.0.0 verify
+> tsx scripts/verify.ts
+
+$ node node_modules/typescript/bin/tsc -p tsconfig.json
+$ node --import tsx scripts/test.ts
+TAP version 13
+# Subtest: black on white is 21:1
+ok 1 - black on white is 21:1
+  ---
+  duration_ms: 4.933821
+  ...
+# Subtest: parse "15000"
+ok 2 - parse "15000"
+  ---
+  duration_ms: 4.971873
+  ...
+# Subtest: parse "15000.5"
+ok 3 - parse "15000.5"
+  ---
+  duration_ms: 4.516108
+  ...
+# Subtest: parse "15000.50"
+ok 4 - parse "15000.50"
+  ---
+  duration_ms: 2.886374
+  ...
+# Subtest: parse "0.05"
+ok 5 - parse "0.05"
+  ---
+  duration_ms: 1.076336
+  ...
+# Subtest: parse " \\t0.05 "
+ok 6 - parse " \\t0.05 "
+  ---
+  duration_ms: 0.750897
+  ...
+# Subtest: reject "15000.505"
+ok 7 - reject "15000.505"
+  ---
+  duration_ms: 1.57518
+  ...
+# Subtest: reject "15000.500"
+ok 8 - reject "15000.500"
+  ---
+  duration_ms: 0.844124
+  ...
+# Subtest: reject ".5"
+ok 9 - reject ".5"
+  ---
+  duration_ms: 1.479625
+  ...
+# Subtest: reject "1."
+ok 10 - reject "1."
+  ---
+  duration_ms: 1.294115
+  ...
+# Subtest: reject "1,000"
+ok 11 - reject "1,000"
+  ---
+  duration_ms: 1.419358
+  ...
+# Subtest: reject "-5"
+ok 12 - reject "-5"
+  ---
+  duration_ms: 1.400919
+  ...
+# Subtest: reject "1e3"
+ok 13 - reject "1e3"
+  ---
+  duration_ms: 0.468462
+  ...
+# Subtest: reject "$5"
+ok 14 - reject "$5"
+  ---
+  duration_ms: 0.361679
+  ...
+# Subtest: reject ""
+ok 15 - reject ""
+  ---
+  duration_ms: 1.061539
+  ...
+# Subtest: reject "0"
+ok 16 - reject "0"
+  ---
+  duration_ms: 0.625907
+  ...
+# Subtest: reject "0.00"
+ok 17 - reject "0.00"
+  ---
+  duration_ms: 0.942343
+  ...
+# Subtest: zero minor units
+ok 18 - zero minor units
+  ---
+  duration_ms: 0.730198
+  ...
+# Subtest: amount and safe sum boundaries
+ok 19 - amount and safe sum boundaries
+  ---
+  duration_ms: 1.478379
+  ...
+# Subtest: CSV data row boundary
+ok 20 - CSV data row boundary
+  ---
+  duration_ms: 119.47222
+  ...
+# Subtest: CSV BOM, CRLF, blank lines, commas and escaped quotes
+ok 21 - CSV BOM, CRLF, blank lines, commas and escaped quotes
+  ---
+  duration_ms: 6.899594
+  ...
+# Subtest: partial settlement and FIFO by due override
+ok 22 - partial settlement and FIFO by due override
+  ---
+  duration_ms: 4.148743
+  ...
+# Subtest: FIFO breaks ties by sale date then file order
+ok 23 - FIFO breaks ties by sale date then file order
+  ---
+  duration_ms: 1.344624
+  ...
+# Subtest: overpayment creates credit, and next sale consumes it
+ok 24 - overpayment creates credit, and next sale consumes it
+  ---
+  duration_ms: 1.268873
+  ...
+# Subtest: prepayment
+ok 25 - prepayment
+  ---
+  duration_ms: 0.743537
+  ...
+# Subtest: same-day sales precede earlier-listed payments
+ok 26 - same-day sales precede earlier-listed payments
+  ---
+  duration_ms: 0.829646
+  ...
+# Subtest: due today and aging edges
+ok 27 - due today and aging edges
+  ---
+  duration_ms: 4.716009
+  ...
+# Subtest: terms precedence
+ok 28 - terms precedence
+  ---
+  duration_ms: 1.794599
+  ...
+# Subtest: formatters and calendar validation
+ok 29 - formatters and calendar validation
+  ---
+  duration_ms: 2.107285
+  ...
+# Subtest: validates multiple issues with row and file, capped at twenty
+ok 30 - validates multiple issues with row and file, capped at twenty
+  ---
+  duration_ms: 28.468739
+  ...
+# Subtest: future transactions excluded and warnings counted; deterministic summary
+ok 31 - future transactions excluded and warnings counted; deterministic summary
+  ---
+  duration_ms: 2.7682
+  ...
+# Subtest: D9 three minor units parse and format 1.250 and reject 1.2501
+ok 32 - D9 three minor units parse and format 1.250 and reject 1.2501
+  ---
+  duration_ms: 4.629219
+  ...
+# Subtest: D9 zero minor units display JPY without decimals and reject 100.0
+ok 33 - D9 zero minor units display JPY without decimals and reject 100.0
+  ---
+  duration_ms: 1.957343
+  ...
+# Subtest: F1 transaction maximum and one above with CSV row
+ok 34 - F1 transaction maximum and one above with CSV row
+  ---
+  duration_ms: 12.968417
+  ...
+# Subtest: F1 currency symbol maximum and one above with shop row
+ok 35 - F1 currency symbol maximum and one above with shop row
+  ---
+  duration_ms: 6.093882
+  ...
+# Subtest: F1 customer absolute balance maximum and one above
+ok 36 - F1 customer absolute balance maximum and one above
+  ---
+  duration_ms: 18.606069
+  ...
+# Subtest: F1 customer credit and negative balance maximum and one above
+ok 37 - F1 customer credit and negative balance maximum and one above
+  ---
+  duration_ms: 2.885151
+  ...
+# Subtest: F1 customer overdue maximum and one above
+ok 38 - F1 customer overdue maximum and one above
+  ---
+  duration_ms: 2.863199
+  ...
+# Subtest: F1 shop outstanding maximum and one above
+ok 39 - F1 shop outstanding maximum and one above
+  ---
+  duration_ms: 162.428961
+  ...
+# Subtest: F1 shop overdue maximum and one above
+ok 40 - F1 shop overdue maximum and one above
+  ---
+  duration_ms: 72.141987
+  ...
+# Subtest: F1 shop credit maximum and one above use total_credit
+ok 41 - F1 shop credit maximum and one above use total_credit
+  ---
+  duration_ms: 58.136685
+  ...
+# Subtest: S3 sample summary schema and total_credit
+ok 42 - S3 sample summary schema and total_credit
+  ---
+  duration_ms: 67.488534
+  ...
+# Subtest: S3 stress-max summary schema and total_credit
+ok 43 - S3 stress-max summary schema and total_credit
+  ---
+  duration_ms: 22.064214
+  ...
+# Subtest: S3 stress-min summary schema and total_credit
+ok 44 - S3 stress-min summary schema and total_credit
+  ---
+  duration_ms: 8.202169
+  ...
+# Subtest: S7 sample summary-only command writes one file byte-identical to build
+ok 45 - S7 sample summary-only command writes one file byte-identical to build
+  ---
+  duration_ms: 6721.446305
+  ...
+1..45
+# tests 45
+# suites 0
+# pass 45
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 7839.430584
+$ node --import tsx scripts/contrast.ts
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+$ node --import tsx scripts/build.tsx --data data/sample --as-of 2026-11-20 --out out/sample
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+{"checked":29,"errors":0,"warnings":0,"info":66}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/ledger.tsx --props out/sample/evidence/ledger-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/ledger.tsx","input":"template","root":"Page","status":"ok","outputs":[],"diagnostics":[{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[13].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/reminder.tsx --props out/sample/evidence/reminder-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/reminder.tsx","input":"template","root":"Canvas","status":"ok","outputs":[],"diagnostics":[]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/receipt.tsx --props out/sample/evidence/receipt-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/receipt.tsx","input":"template","root":"Email","status":"ok","outputs":[],"diagnostics":[{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Heading in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[7].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[10].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[10].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 13px, under 14px","path":"root.children[0].children[11]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node --import tsx scripts/build.tsx --data data/stress-max --as-of 2026-11-20 --out out/stress-max
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+{"checked":5,"errors":0,"warnings":0,"info":16}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/ledger.tsx --props out/stress-max/evidence/ledger-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/ledger.tsx","input":"template","root":"Page","status":"ok","outputs":[],"diagnostics":[{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/reminder.tsx --props out/stress-max/evidence/reminder-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/reminder.tsx","input":"template","root":"Canvas","status":"ok","outputs":[],"diagnostics":[]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/receipt.tsx --props out/stress-max/evidence/receipt-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/receipt.tsx","input":"template","root":"Email","status":"ok","outputs":[],"diagnostics":[{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Heading in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[7].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[10].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[10].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 13px, under 14px","path":"root.children[0].children[11]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node --import tsx scripts/build.tsx --data data/stress-min --as-of 2026-11-20 --out out/stress-min
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+{"checked":4,"errors":0,"warnings":0,"info":16}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/ledger.tsx --props out/stress-min/evidence/ledger-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/ledger.tsx","input":"template","root":"Page","status":"ok","outputs":[],"diagnostics":[{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[6].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[6].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[6].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[6].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/receipt.tsx --props out/stress-min/evidence/receipt-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/receipt.tsx","input":"template","root":"Email","status":"ok","outputs":[],"diagnostics":[{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Heading in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[7].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[10].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[10].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 13px, under 14px","path":"root.children[0].children[11]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node --import tsx scripts/build.tsx --data data/currency-usd --as-of 2026-11-20 --out out/currency-usd
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+{"checked":10,"errors":0,"warnings":0,"info":24}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/ledger.tsx --props out/currency-usd/evidence/ledger-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/ledger.tsx","input":"template","root":"Page","status":"ok","outputs":[],"diagnostics":[{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[13].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/reminder.tsx --props out/currency-usd/evidence/reminder-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/reminder.tsx","input":"template","root":"Canvas","status":"ok","outputs":[],"diagnostics":[]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/receipt.tsx --props out/currency-usd/evidence/receipt-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/receipt.tsx","input":"template","root":"Email","status":"ok","outputs":[],"diagnostics":[{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Heading in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[7].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[10].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[10].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 13px, under 14px","path":"root.children[0].children[11]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node --import tsx scripts/build.tsx --data data/currency-jpy --as-of 2026-11-20 --out out/currency-jpy
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+{"checked":10,"errors":0,"warnings":0,"info":24}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/ledger.tsx --props out/currency-jpy/evidence/ledger-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/ledger.tsx","input":"template","root":"Page","status":"ok","outputs":[],"diagnostics":[{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[4].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[1].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[2].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[7].children[3].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"page/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0].children[13].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/reminder.tsx --props out/currency-jpy/evidence/reminder-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/reminder.tsx","input":"template","root":"Canvas","status":"ok","outputs":[],"diagnostics":[]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
+$ node node_modules/@hyper-elements/cli/dist/bin.js check templates/receipt.tsx --props out/currency-jpy/evidence/receipt-props.json --rendered --json
+{"version":1,"command":"check","file":"templates/receipt.tsx","input":"template","root":"Email","status":"ok","outputs":[],"diagnostics":[{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Heading in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[7].style.letterSpacing","clients":["outlook"]},{"code":"email/outlook-degraded","severity":"info","message":"letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it","path":"root.children[0].children[10].children[0].style.letterSpacing","clients":["outlook"]},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 12px, under 14px","path":"root.children[0].children[10].children[0]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"},{"code":"email/lint-text-size","severity":"info","message":"This text is 13px, under 14px","path":"root.children[0].children[11]","fix":"make it 14px or larger, on phones at least (style.mobile.fontSize)","see":"https://www.hyperelements.dev/docs/lint#text-size"}]}
+{"version":1,"summary":{"templates":1,"errors":0,"warnings":0,"skipped":0,"late":[]},"exitCode":0}
++ verify_status=0
++ printf 'npm run verify exit code: %s\n' 0
+npm run verify exit code: 0
++ test 0 -eq 0
++ npm run build -- --data data/sample --as-of 2026-11-20 --out out/sample
+
+> owebook@1.0.0 build
+> tsx scripts/build.tsx --data data/sample --as-of 2026-11-20 --out out/sample
+
+#162842 on #ffffff 14.83:1
+#162842 on #edf5fc 13.46:1
+#162842 on #fff3d8 13.46:1
+#162842 on #fce9df 12.61:1
+#162842 on #f5dfe7 11.71:1
+{"checked":29,"errors":0,"warnings":0,"info":66}
+WSL overall exit code: 0

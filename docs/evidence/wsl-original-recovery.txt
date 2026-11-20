@@ -1,0 +1,96 @@
+code commit: db5d3748c2ac4cc38008fc23c65d82b163394e3a
+
++ source=<local repository>
+++ git -C <local repository> rev-parse HEAD
++ source_head=db5d3748c2ac4cc38008fc23c65d82b163394e3a
+++ mktemp -d <temporary WSL clone>
++ dest=<temporary WSL clone>
++ git clone --no-local <local repository> <temporary WSL clone>
+Cloning into '<temporary WSL clone>'...
++ cd <temporary WSL clone>
+++ git rev-parse HEAD
++ clone_head=db5d3748c2ac4cc38008fc23c65d82b163394e3a
++ test db5d3748c2ac4cc38008fc23c65d82b163394e3a = db5d3748c2ac4cc38008fc23c65d82b163394e3a
++ node --version
+v20.20.2
++ npm --version
+10.8.2
+++ node --version
++ test v20.20.2 = v20.20.2
+++ npm --version
++ test 10.8.2 = 10.8.2
++ npm ci
+
+added 101 packages, and audited 102 packages in 9s
+
+5 packages are looking for funding
+  run `npm fund` for details
+
+6 moderate severity vulnerabilities
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
++ install_status=0
++ printf 'npm ci exit code: %s\n' 0
+npm ci exit code: 0
++ test 0 -eq 0
++ npm exec -- playwright install chromium
+Downloading Chrome for Testing 159.0.8154.6 (playwright chromium v1255)[2m from https://cdn.playwright.dev/builds/cft/159.0.8154.6/linux64/chrome-linux64.zip[22m
+|                                                                                |   0% of 199.3 MiB
+|â– â– â– â– â– â– â– â–                                                                         |  10% of 199.3 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                                                                 |  20% of 199.3 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                                                         |  30% of 199.3 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                                                 |  40% of 199.3 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                                         |  50% of 199.3 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                                 |  60% of 199.3 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                         |  70% of 199.3 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                 |  80% of 199.3 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–         |  90% of 199.3 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– | 100% of 199.3 MiB
+Chrome for Testing 159.0.8154.6 (playwright chromium v1255) downloaded to <WSL home>/.cache/ms-playwright/chromium-1255
+Downloading FFmpeg (playwright ffmpeg v1013)[2m from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1013/ffmpeg-linux.zip[22m
+|                                                                                |   0% of 2.2 MiB
+|â– â– â– â– â– â– â– â–                                                                         |  10% of 2.2 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                                                                 |  20% of 2.2 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                                                         |  30% of 2.2 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                                                 |  40% of 2.2 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                                         |  50% of 2.2 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                                 |  60% of 2.2 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                         |  70% of 2.2 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                 |  80% of 2.2 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–         |  90% of 2.2 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– | 100% of 2.2 MiB
+FFmpeg (playwright ffmpeg v1013) downloaded to <WSL home>/.cache/ms-playwright/ffmpeg-1013
+Downloading Chrome Headless Shell 159.0.8154.6 (playwright chromium-headless-shell v1255)[2m from https://cdn.playwright.dev/builds/cft/159.0.8154.6/linux64/chrome-headless-shell-linux64.zip[22m
+|                                                                                |   0% of 125.7 MiB
+|â– â– â– â– â– â– â– â–                                                                         |  10% of 125.7 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                                                                 |  20% of 125.7 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                                                         |  30% of 125.7 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                                                 |  40% of 125.7 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                                         |  50% of 125.7 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                                 |  60% of 125.7 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                         |  70% of 125.7 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–                 |  80% of 125.7 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â–         |  90% of 125.7 MiB
+|â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– | 100% of 125.7 MiB
+Chrome Headless Shell 159.0.8154.6 (playwright chromium-headless-shell v1255) downloaded to <WSL home>/.cache/ms-playwright/chromium_headless_shell-1255
++ npm run verify
+
+> owebook@1.0.0 verify
+> tsx scripts/verify.ts
+
+$ node node_modules/typescript/bin/tsc -p tsconfig.json
+$ node --import tsx --test tests/*.test.ts
+Could not find '<temporary WSL clone>/tests/*.test.ts'
+Error: Command exited 1
+    at run (<temporary WSL clone>/scripts/verify.ts:20:53)
+    at node (<temporary WSL clone>/scripts/verify.ts:23:34)
+    at tsx (<temporary WSL clone>/scripts/verify.ts:24:36)
+    at main (<temporary WSL clone>/scripts/verify.ts:33:48)
++ verify_status=1
+npm run verify exit code: 1
++ printf 'npm run verify exit code: %s\n' 1
++ exit 1
+WSL overall exit code: 1
