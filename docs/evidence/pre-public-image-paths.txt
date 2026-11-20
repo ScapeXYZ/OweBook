@@ -1,0 +1,10 @@
+code commit: da4841700570ad5621e2a85328d0af25749778b2
+
+Git paths checked with git ls-files --error-unmatch.
+assets/sample-ledger-1280.png | tracked | PNG 1280x1187 | README width 880 | Owner ledger with balances and aging at 1280 px | Fictional sample data. Owner ledger at 1280 px. | byte-identical
+assets/sample-ledger-390.png | tracked | PNG 390x2896 | README width 320 | Owner ledger with stacked customer rows at 390 px | Fictional sample data. Owner ledger at 390 px. | byte-identical
+assets/sample-statement-c3-page-1.png | tracked | PNG 1191x1684 | README width 560 | First page of customer c3’s A4 statement | Fictional sample data. Customer c3’s statement, page 1. | byte-identical
+assets/sample-overdue-reminder-c3-square.png | tracked | PNG 1080x1080 | README width 520 | Square overdue reminder for customer c3 | Fictional sample data. Square overdue reminder for customer c3. | byte-identical
+assets/sample-receipt-E015-gmail-emulated-600.png | tracked | PNG 600x527 | README width 600 | Receipt E015 in an emulated Gmail preview at 600 px | Fictional sample data. Emulated Gmail preview of receipt E015 at 600 px. | byte-identical
+assets/sample-receipt-E015-gmail-emulated-390.png | tracked | PNG 390x589 | README width 390 | Receipt E015 in an emulated Gmail preview at 390 px | Fictional sample data. Emulated Gmail preview of receipt E015 at 390 px. | byte-identical
+assets/sample-receipt-E015-outlook-com-emulated-600.png | tracked | PNG 600x527 | README width 600 | Receipt E015 in an emulated Outlook.com preview at 600 px | Fictional sample data. Emulated Outlook.com preview of receipt E015 at 600 px. | byte-identical

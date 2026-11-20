@@ -1,0 +1,29 @@
+code commit: da4841700570ad5621e2a85328d0af25749778b2
+npm.cmd run crosscheck
+
+
+> owebook@1.0.0 crosscheck
+> tsx scripts/crosscheck.ts
+
+{
+  "as_of": "2026-11-20",
+  "sets": {
+    "sample": 8,
+    "stress-max": 1,
+    "stress-min": 1
+  },
+  "diff_count": 0,
+  "diffs": [],
+  "mapping": {
+    "amounts": "integer minor units",
+    "aging": [
+      "not_due",
+      "1_7",
+      "8_30",
+      "31_plus"
+    ],
+    "dates": "days since 1970-01-01",
+    "shop_credit": "required by Claude spec; may be absent in existing summary schema"
+  }
+}
+exit code: 0

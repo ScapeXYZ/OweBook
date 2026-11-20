@@ -1,0 +1,36 @@
+code commit: 266e397fa801060888ef9f6c656c1bb01c4d3496
+rg -n -i -C 1 -e 'verified|bank|confirmed|zero warnings|Gmail-safe|pixel|audit|accounting|fuzz|all clients|secure|production|guarantee|independent' README.md docs/claims.md docs/submission.md docs/qualification-checklist.md
+
+README.md-30-
+README.md:31:OweBook is a local TypeScript template kit that turns shop records into a customer statement, payment reminder, payment receipt email, and owner ledger. It has no user accounts, records no payments itself, and sends no email. Receipts describe payments recorded in the shop's own data without checking bank records. The calculation supports one currency per data set and excludes interest, fees, refunds, discounts, write-offs, and taxes. OweBook is a recordkeeping tool and provides no accounting guidance.
+README.md-32-
+--
+README.md-59-
+README.md:60:`shop.paper` accepts only `A4` and defaults to `A4` when omitted. Letter is rejected. The reminder card supports square format only. See the [input and command capability audit](docs/spec.md#input-and-command-capability-audit) for fields that are accepted but not displayed.
+README.md-61-
+--
+README.md-81-
+README.md:82:The repository includes verification/crosscheck.py, a second implementation of the ledger rules in docs/spec.md written in Python. On the fictional sample dataset (8 customers) and two stress datasets (1 customer each), it reproduces the tool's balances, credits, aging buckets, reminder tiers and payment allocations. It was written by the project team with AI assistance after the sample figures had already been reviewed, so it is a consistency check, not an independent audit.
+README.md-83-
+--
+docs/claims.md-4-| --- | --- | --- |
+docs/claims.md:5:| Real fictional sample renders for the ledger, statement, square reminder, and emulated receipt previews | [Approved assets](../assets), [SHA-256 comparison](evidence/d10b-assets-sha256.json) | Verified locally |
+docs/claims.md:6:| Local TypeScript kit and its four output types | [Build workflow](../scripts/build.tsx), [templates](../templates) | Verified locally |
+docs/claims.md:7:| No accounts, payment initiation, email sending, or bank checks. Receipts represent recorded data. | [Build workflow](../scripts/build.tsx), [receipt](../templates/receipt.tsx) | Verified in source |
+docs/claims.md:8:| One currency per set, excluded charges and adjustments, and recordkeeping scope | [Specification](spec.md), [ledger](../core/ledger.ts) | Verified in source |
+docs/claims.md:9:| Hyper Elements versions, four roots, shared theme, fictional PreviewProps, and HTML diagnostics | [Manifest](../package.json), [templates](../templates), [theme](../kit/theme.ts), [preview data](../kit/sample.ts) | Verified locally |
+docs/claims.md:10:| CLI checks Page, Canvas, and Email. The Document uses public validate and renderPdf because the CLI worker fails. | [CLI limitation](decisions.md#known-limitations), [Document diagnostics](evidence/diagnostics-sample.json), [build workflow](../scripts/build.tsx) | Verified locally |
+docs/claims.md:11:| Tested Node and npm versions, native ESM, and PowerShell npm.cmd fallback | [Windows results](evidence/windows-complete.txt), [WSL results](evidence/wsl-complete.txt), [manifest](../package.json), [PowerShell record](decisions.md) | Verified locally |
+docs/claims.md:12:| Repository-root setup commands and five-dataset Node-only verification | [Fresh-clone README run](evidence/wsl-portable.txt), [repeat WSL results](evidence/wsl-complete.txt), [runner](../scripts/verify.ts) | Verified locally |
+docs/claims.md:13:| Full tier, Chromium installation, Python and Poppler prerequisites, Windows WSL routing, and WSL pass | [Runner](../scripts/verify.ts), [Chromium installation and original recovery transcript](evidence/wsl-original-recovery.txt), [WSL full tier](evidence/wsl-complete.txt) | Verified locally |
+docs/claims.md:14:| Input files, explicit as-of, receipt selection, and A4 and square output scope | [Build arguments](../scripts/build.tsx), [sample](../data/sample), [ledger rules](spec.md), [PDF and screenshots](evidence/wsl-complete.txt) | Verified locally and in source |
+docs/claims.md:15:| Paper defaults to A4, Letter is rejected, and the reminder card supports square format only. | [D11 tests](../tests/capabilities.test.ts), [input and CLI audit](spec.md#input-and-command-capability-audit), [reminder template](../templates/reminder.tsx) | Verified locally and in source |
+docs/claims.md:16:| Decimal syntax, currency-symbol width, monetary limits and CSV row cap | [Boundary tests](../tests/limits.test.ts), [parsing tests](../tests/core.test.ts), [input rules](spec.md) | Verified locally |
+docs/claims.md:17:| Bundled Lato glyph requirement and ISO-code fallback | [Arabic glyph probe](decisions.md#day-2-currency-verification) | Verified locally |
+docs/claims.md:18:| Summary-only command | [CLI test](../tests/summary.test.ts), [Windows results](evidence/windows-complete.txt) | Verified locally |
+docs/claims.md:19:| NGN, USD, and JPY render with their respective symbols and decimal places. No conversion. | [Currency results](decisions.md#day-2-currency-verification), [PDF extraction and diagnostics](evidence/wsl-complete.txt), [ledger](../core/ledger.ts) | Verified locally |
+docs/claims.md:20:| Small labels, classic Outlook letter spacing, font fallback, and Chromium receipt screenshots | [Render diagnostics](evidence/diagnostics-sample.json), [screenshot runner](../scripts/screenshot.ts) | Verified locally |
+docs/claims.md:21:| Gmail and Outlook.com preview emulation, Arial fallback, missing stand-in, and classic Outlook's fixed-width model | [Preview diagnostics and 390 px measurement](evidence/d10b-email-preview-findings.json), [approved captures](../assets) | Verified in the emulator |
+docs/claims.md:22:| 47 named tests, Day 2 fresh WSL results, checklist and claims links | [Final Windows tests](evidence/d10b-tests.txt), [Day 2 WSL results](evidence/wsl-complete.txt), [checklist](qualification-checklist.md) | Verified locally |
+docs/claims.md:23:| Python consistency check, matching original datasets and independence limitation | [Checker](../verification/crosscheck.py), [original-set comparison](evidence/crosscheck.json), [fresh comparison](evidence/wsl-full-crosscheck.json), [provenance](../verification/README.md) | Verified locally |
+docs/claims.md:24:| MIT license and separate bundled font notices | [MIT license](../LICENSE), [third-party notices](../THIRD_PARTY.md) | Verified in source |
