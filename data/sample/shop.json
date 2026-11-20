@@ -1,0 +1,16 @@
+{
+  "notice": "FICTIONAL SAMPLE DATA",
+  "name": "Marginline Supply Shop",
+  "currency": {
+    "code": "NGN",
+    "symbol": "₦",
+    "minorUnits": 2
+  },
+  "default_terms_days": 14,
+  "payment_instructions": [
+    "Ask at the shop counter for payment details.",
+    "Sample reference only: FICTIONAL-ACCOUNT."
+  ],
+  "paper": "A4",
+  "contact": "Fictional shop contact"
+}

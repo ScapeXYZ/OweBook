@@ -1,0 +1,4 @@
+id,date,customer_id,type,amount,note,due_date,method,reference,sample_label
+MIN1,2026-11-01,min-customer,sale,10.00,Fictional sale,2026-11-02,,,FICTIONAL SAMPLE DATA
+MIN2,2026-11-04,min-customer,payment,4.00,Fictional partial payment,,Counter,DEMO-MIN-1,
+MIN3,2026-11-20,min-customer,payment,6.00,Fictional final payment,,Counter,DEMO-MIN-2,

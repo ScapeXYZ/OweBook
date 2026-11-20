@@ -1,0 +1,18 @@
+id,date,customer_id,type,amount,note,due_date,method,reference,sample_label
+MAX1,2026-10-01,max-customer,sale,99999999.99,Fictional bulk order for shop supplies and storage inventory,2026-10-19,,,FICTIONAL SAMPLE DATA
+MAX2,2026-10-02,max-customer,sale,99999999.99,Fictional bulk order for shop supplies and storage inventory,2026-10-19,,,
+MAX3,2026-10-03,max-customer,sale,99999999.99,Fictional bulk order for shop supplies and storage inventory,2026-10-19,,,
+MAX4,2026-10-04,max-customer,sale,99999999.99,Fictional bulk order for shop supplies and storage inventory,2026-10-19,,,
+MAX5,2026-10-05,max-customer,sale,99999999.99,Fictional bulk order for shop supplies and storage inventory,2026-10-19,,,
+MAX6,2026-10-06,max-customer,sale,99999999.99,Fictional bulk order for shop supplies and storage inventory,2026-10-19,,,
+MAX7,2026-10-07,max-customer,sale,99999999.99,Fictional bulk order for shop supplies and storage inventory,2026-10-19,,,
+MAX8,2026-10-08,max-customer,sale,99999999.99,Fictional bulk order for shop supplies and storage inventory,2026-10-19,,,
+MAX9,2026-10-09,max-customer,sale,99999999.99,Fictional bulk order for shop supplies and storage inventory,2026-10-19,,,
+MAX10,2026-10-10,max-customer,sale,0.02,Fictional bulk order for shop supplies and storage inventory,2026-10-19,,,
+MAX11,2026-10-11,max-customer,sale,0.01,Fictional bulk order for shop supplies and storage inventory,2026-10-19,,,
+MAX12,2026-10-12,max-customer,sale,0.02,Fictional bulk order for shop supplies and storage inventory,2026-10-19,,,
+MAX13,2026-10-13,max-customer,sale,0.02,Fictional bulk order for shop supplies and storage inventory,2026-10-19,,,
+MAX14,2026-10-14,max-customer,sale,0.01,Fictional bulk order for shop supplies and storage inventory,2026-10-19,,,
+MAX15,2026-10-15,max-customer,sale,0.02,Fictional bulk order for shop supplies and storage inventory,2026-10-19,,,
+MAX16,2026-10-16,max-customer,sale,99999999.99,Fictional bulk order for shop supplies and storage inventory,2026-10-19,,,
+MAXPAY,2026-10-15,max-customer,payment,0.01,Fictional partial settlement,,Counter,DEMO-MAX,

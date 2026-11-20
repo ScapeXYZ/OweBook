@@ -1,0 +1,14 @@
+{
+  "notice": "FICTIONAL SAMPLE DATA",
+  "name": "Moonfen Stationery and Supply Emporium",
+  "currency": {
+    "code": "NGN",
+    "symbol": "₦",
+    "minorUnits": 2
+  },
+  "default_terms_days": 14,
+  "payment_instructions": [
+    "Fictional reference only: DEMO-ACCOUNT."
+  ],
+  "paper": "A4"
+}

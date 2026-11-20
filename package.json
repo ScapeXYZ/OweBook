@@ -1,0 +1,47 @@
+{
+  "name": "owebook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsx --test tests/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "build": "tsx scripts/build.tsx",
+    "contrast": "tsx scripts/contrast.ts",
+    "screenshots": "tsx scripts/screenshot.ts",
+    "verify": "tsx scripts/verify.ts",
+    "summary": "tsx scripts/summary.ts",
+    "crosscheck": "tsx scripts/crosscheck.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ScapeXYZ/OweBook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/ScapeXYZ/OweBook/issues"
+  },
+  "homepage": "https://github.com/ScapeXYZ/OweBook#readme",
+  "dependencies": {
+    "@hyper-elements/react": "0.4.6",
+    "@react-pdf/renderer": "4.9.0",
+    "@resvg/resvg-js": "2.6.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "satori": "0.33.5"
+  },
+  "devDependencies": {
+    "@hyper-elements/cli": "0.2.10",
+    "@hyper-elements/email-clients": "0.4.16",
+    "@hyper-elements/lint": "0.1.7",
+    "@types/node": "26.6.6",
+    "@types/react": "18.3.31",
+    "@types/react-dom": "18.3.7",
+    "playwright": "1.65.1",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
+  }
+}
