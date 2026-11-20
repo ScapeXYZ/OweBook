@@ -2,7 +2,7 @@
 
 | README passage or claim | Evidence | Status |
 | --- | --- | --- |
-| Preview placeholders for the ledger, statement, reminder, and receipt | [Qualification gate](qualification-checklist.md) | PENDING |
+| Real fictional sample renders for the ledger, statement, square reminder, and emulated receipt previews | [Approved assets](../assets), [SHA-256 comparison](evidence/d10b-assets-sha256.json) | Verified locally |
 | Local TypeScript kit and its four output types | [Build workflow](../scripts/build.tsx), [templates](../templates) | Verified locally |
 | No accounts, payment initiation, email sending, or bank checks. Receipts represent recorded data. | [Build workflow](../scripts/build.tsx), [receipt](../templates/receipt.tsx) | Verified in source |
 | One currency per set, excluded charges and adjustments, and recordkeeping scope | [Specification](spec.md), [ledger](../core/ledger.ts) | Verified in source |
@@ -18,7 +18,7 @@
 | Summary-only command | [CLI test](../tests/summary.test.ts), [Windows results](evidence/windows-complete.txt) | Verified locally |
 | NGN, USD, and JPY render with their respective symbols and decimal places. No conversion. | [Currency results](decisions.md#day-2-currency-verification), [PDF extraction and diagnostics](evidence/wsl-complete.txt), [ledger](../core/ledger.ts) | Verified locally |
 | Small labels, classic Outlook letter spacing, font fallback, and Chromium receipt screenshots | [Render diagnostics](evidence/diagnostics-sample.json), [screenshot runner](../scripts/screenshot.ts) | Verified locally |
-| Gmail and Outlook visual approval | [Qualification checklist](qualification-checklist.md) | PENDING |
-| 45 named tests, fresh WSL results, checklist and claims links | [Windows results](evidence/windows-complete.txt), [WSL results](evidence/wsl-complete.txt), [checklist](qualification-checklist.md) | Verified locally |
+| Gmail and Outlook.com preview emulation, Arial fallback, missing stand-in, and classic Outlook's fixed-width model | [Preview diagnostics and 390 px measurement](evidence/d10b-email-preview-findings.json), [approved captures](../assets) | Verified in the emulator |
+| 47 named tests, Day 2 fresh WSL results, checklist and claims links | [Final Windows tests](evidence/d10b-tests.txt), [Day 2 WSL results](evidence/wsl-complete.txt), [checklist](qualification-checklist.md) | Verified locally |
 | Python consistency check, matching original datasets and independence limitation | [Checker](../verification/crosscheck.py), [original-set comparison](evidence/crosscheck.json), [fresh comparison](evidence/wsl-full-crosscheck.json), [provenance](../verification/README.md) | Verified locally |
 | MIT license and separate bundled font notices | [MIT license](../LICENSE), [third-party notices](../THIRD_PARTY.md) | Verified in source |

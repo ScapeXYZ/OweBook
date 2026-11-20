@@ -17,7 +17,7 @@ none
 
 ## Review evidence
 
-- [README and preview placeholders](../README.md)
+- [README and approved previews](../README.md)
 - [Templates and computed preview inputs](../templates)
 - [Qualification status and remaining verification](qualification-checklist.md)
 - [Claims evidence](claims.md)

@@ -1,9 +1,32 @@
 # Preview
 
-- [Placeholder] Owner ledger at 1280 px and 390 px
-- [Placeholder] A4 customer statement, page 1
-- [Placeholder] Square overdue reminder
-- [Placeholder] Payment receipt
+![Fictional sample shop ledger with balances and aging at 1280 px](assets/sample-ledger-1280.png)
+
+*Fictional sample data. Owner ledger at 1280 px.*
+
+![Fictional sample shop ledger with stacked customer rows at 390 px](assets/sample-ledger-390.png)
+
+*Fictional sample data. Owner ledger at 390 px.*
+
+![First page of fictional customer c3's A4 statement](assets/sample-statement-c3-page-1.png)
+
+*Fictional sample data. Customer c3 statement, page 1.*
+
+![Square overdue reminder for fictional customer c3](assets/sample-overdue-reminder-c3-square.png)
+
+*Fictional sample data. Square overdue reminder for customer c3.*
+
+![Fictional receipt E015 in an emulated Gmail preview at 600 px](assets/sample-receipt-E015-gmail-emulated-600.png)
+
+*Fictional sample data. Receipt E015, emulated Gmail preview at 600 px.*
+
+![Fictional receipt E015 in an emulated Gmail preview at 390 px](assets/sample-receipt-E015-gmail-emulated-390.png)
+
+*Fictional sample data. Receipt E015, emulated Gmail preview at 390 px.*
+
+![Fictional receipt E015 in an emulated Outlook.com preview at 600 px](assets/sample-receipt-E015-outlook-com-emulated-600.png)
+
+*Fictional sample data. Receipt E015, emulated Outlook.com preview at 600 px.*
 
 OweBook is a local TypeScript template kit that turns shop records into a customer statement, payment reminder, payment receipt email, and owner ledger. It has no user accounts, records no payments itself, and sends no email. Receipts describe payments recorded in the shop's own data without checking bank records. The calculation supports one currency per data set and excludes interest, fees, refunds, discounts, write-offs, and taxes. OweBook is a recordkeeping tool and provides no accounting guidance.
 
@@ -50,11 +73,11 @@ The rendered fixtures cover NGN (₦, two decimal places), USD ($, two decimal p
 
 ## Known limitations
 
-Informational HTML diagnostics include small labels, classic Outlook letter-spacing differences, and fallback fonts. The full tier's receipt screenshots use Chromium. Gmail and Outlook visual approval is pending.
+Informational HTML diagnostics include small labels, classic Outlook letter-spacing differences, and fallback fonts. The full tier's receipt screenshots use Chromium. The Gmail and Outlook.com images above come from the approximate Hyper Elements email-clients emulator. Gmail and Outlook.com removed the Lato web-font rules and used Arial in the captured previews. The emulator marked those previews incomplete because its Consolas stand-in was unavailable. The classic Outlook model keeps the 600 px receipt width at a 390 px viewport, which clips the right edge. Rendering and font choices can vary by email client.
 
 ## Tests
 
-The [45 named tests and Windows results](docs/evidence/windows-complete.txt) and the [fresh WSL clone results](docs/evidence/wsl-complete.txt) are available for review. See the [qualification checklist](docs/qualification-checklist.md) and [evidence for README claims](docs/claims.md).
+The [47 named tests and final Windows results](docs/evidence/d10b-tests.txt) and the [Day 2 fresh WSL clone results](docs/evidence/wsl-complete.txt) are available for review. See the [qualification checklist](docs/qualification-checklist.md) and [evidence for README claims](docs/claims.md).
 
 The repository includes verification/crosscheck.py, a second implementation of the ledger rules in docs/spec.md written in Python. On the fictional sample dataset (8 customers) and two stress datasets (1 customer each), it reproduces the tool's balances, credits, aging buckets, reminder tiers and payment allocations. It was written by the project team with AI assistance after the sample figures had already been reviewed, so it is a consistency check, not an independent audit.
 
