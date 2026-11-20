@@ -1,0 +1,198 @@
+{
+    "provenance":  "code commit: d4b76119855174cbf90510a41e4cdc59131c05c8",
+    "renderedFrom":  "code commit: 9e0c70b75bfa2a31c7d5f4820f943a3d2b16bd23",
+    "approved":  [
+                     {
+                         "filename":  "receipt-E015-gmail-600.png",
+                         "client":  "gmail",
+                         "width":  600,
+                         "height":  526,
+                         "contentWidth":  600,
+                         "readiness":  "incomplete",
+                         "approximate":  false,
+                         "findings":  {
+                                          "version":  1,
+                                          "client":  "gmail",
+                                          "variant":  "desktop",
+                                          "dark":  false,
+                                          "width":  600,
+                                          "ready":  "incomplete",
+                                          "elements":  "0.3.0",
+                                          "runtime":  "NSZBLS0qlsNmX/1fyiKg7y7mZp6sw9+BBIi4PH6ZyPI=",
+                                          "models":  "hCmVqF8xfOp6en3fN26y6r6V6waL8c7vi4Bn8usEHYA=",
+                                          "browser":  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36",
+                                          "approximate":  false,
+                                          "removed":  [
+                                                          {
+                                                              "what":  "@font-face",
+                                                              "count":  2
+                                                          },
+                                                          {
+                                                              "what":  "selectors Gmail doesn\u0027t support",
+                                                              "count":  1
+                                                          },
+                                                          {
+                                                              "what":  "overflow-wrap (inline)",
+                                                              "count":  1
+                                                          }
+                                                      ],
+                                          "missing":  [
+                                                          {
+                                                              "kind":  "font",
+                                                              "family":  "Consolas Stand-in"
+                                                          }
+                                                      ],
+                                          "fonts":  [
+                                                        {
+                                                            "family":  "Arial",
+                                                            "verified":  "widths"
+                                                        }
+                                                    ],
+                                          "diagnostics":  [
+
+                                                          ],
+                                          "error":  null
+                                      }
+                     },
+                     {
+                         "filename":  "receipt-E015-outlook-com-600.png",
+                         "client":  "outlook-com",
+                         "width":  600,
+                         "height":  526,
+                         "contentWidth":  600,
+                         "readiness":  "incomplete",
+                         "approximate":  false,
+                         "findings":  {
+                                          "version":  1,
+                                          "client":  "outlook-com",
+                                          "variant":  "desktop",
+                                          "dark":  false,
+                                          "width":  600,
+                                          "ready":  "incomplete",
+                                          "elements":  "0.3.0",
+                                          "runtime":  "NSZBLS0qlsNmX/1fyiKg7y7mZp6sw9+BBIi4PH6ZyPI=",
+                                          "models":  "hCmVqF8xfOp6en3fN26y6r6V6waL8c7vi4Bn8usEHYA=",
+                                          "browser":  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36",
+                                          "approximate":  false,
+                                          "removed":  [
+                                                          {
+                                                              "what":  "@font-face",
+                                                              "count":  2
+                                                          },
+                                                          {
+                                                              "what":  "overflow-wrap (inline)",
+                                                              "count":  1
+                                                          }
+                                                      ],
+                                          "missing":  [
+                                                          {
+                                                              "kind":  "font",
+                                                              "family":  "Consolas Stand-in"
+                                                          }
+                                                      ],
+                                          "fonts":  [
+                                                        {
+                                                            "family":  "Arial",
+                                                            "verified":  "widths"
+                                                        }
+                                                    ],
+                                          "diagnostics":  [
+
+                                                          ],
+                                          "error":  null
+                                      }
+                     },
+                     {
+                         "filename":  "receipt-E015-gmail-390.png",
+                         "client":  "gmail",
+                         "width":  390,
+                         "height":  588,
+                         "contentWidth":  390,
+                         "readiness":  "incomplete",
+                         "approximate":  false,
+                         "findings":  {
+                                          "version":  1,
+                                          "client":  "gmail",
+                                          "variant":  "desktop",
+                                          "dark":  false,
+                                          "width":  390,
+                                          "ready":  "incomplete",
+                                          "elements":  "0.3.0",
+                                          "runtime":  "NSZBLS0qlsNmX/1fyiKg7y7mZp6sw9+BBIi4PH6ZyPI=",
+                                          "models":  "hCmVqF8xfOp6en3fN26y6r6V6waL8c7vi4Bn8usEHYA=",
+                                          "browser":  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36",
+                                          "approximate":  false,
+                                          "removed":  [
+                                                          {
+                                                              "what":  "@font-face",
+                                                              "count":  2
+                                                          },
+                                                          {
+                                                              "what":  "selectors Gmail doesn\u0027t support",
+                                                              "count":  1
+                                                          },
+                                                          {
+                                                              "what":  "overflow-wrap (inline)",
+                                                              "count":  1
+                                                          }
+                                                      ],
+                                          "missing":  [
+                                                          {
+                                                              "kind":  "font",
+                                                              "family":  "Consolas Stand-in"
+                                                          }
+                                                      ],
+                                          "fonts":  [
+                                                        {
+                                                            "family":  "Arial",
+                                                            "verified":  "widths"
+                                                        }
+                                                    ],
+                                          "diagnostics":  [
+
+                                                          ],
+                                          "error":  null
+                                      }
+                     }
+                 ],
+    "excludedClassicOutlook390":  [
+                                      {
+                                          "filename":  "receipt-E015-outlook-390.png",
+                                          "client":  "outlook",
+                                          "width":  390,
+                                          "height":  528,
+                                          "contentWidth":  600,
+                                          "readiness":  "incomplete",
+                                          "approximate":  true,
+                                          "findings":  {
+                                                           "version":  1,
+                                                           "client":  "outlook",
+                                                           "variant":  "desktop",
+                                                           "dark":  false,
+                                                           "width":  390,
+                                                           "ready":  "incomplete",
+                                                           "elements":  "0.3.0",
+                                                           "runtime":  "NSZBLS0qlsNmX/1fyiKg7y7mZp6sw9+BBIi4PH6ZyPI=",
+                                                           "models":  "hCmVqF8xfOp6en3fN26y6r6V6waL8c7vi4Bn8usEHYA=",
+                                                           "browser":  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36",
+                                                           "approximate":  true,
+                                                           "removed":  [
+
+                                                                       ],
+                                                           "missing":  [
+                                                                           {
+                                                                               "kind":  "font",
+                                                                               "family":  "Consolas Stand-in"
+                                                                           }
+                                                                       ],
+                                                           "fonts":  [
+
+                                                                     ],
+                                                           "diagnostics":  [
+
+                                                                           ],
+                                                           "error":  null
+                                                       }
+                                      }
+                                  ]
+}

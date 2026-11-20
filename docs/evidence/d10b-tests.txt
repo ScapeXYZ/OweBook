@@ -1,0 +1,63 @@
+code commit: d4b76119855174cbf90510a41e4cdc59131c05c8
+npm.cmd test
+
+
+> owebook@1.0.0 test
+> tsx scripts/test.ts
+
+✔ D11 paper defaults to A4 and rejects Letter and other formats (6.1972ms)
+✔ D11 rendered statement, ledger and receipt display their intended input fields (106.4087ms)
+✔ black on white is 21:1 (3.1057ms)
+✔ parse "15000" (8.8318ms)
+✔ parse "15000.5" (0.7284ms)
+✔ parse "15000.50" (0.4198ms)
+✔ parse "0.05" (0.3855ms)
+✔ parse " \t0.05 " (0.4271ms)
+✔ reject "15000.505" (1.1715ms)
+✔ reject "15000.500" (0.414ms)
+✔ reject ".5" (0.4265ms)
+✔ reject "1." (0.5617ms)
+✔ reject "1,000" (0.8163ms)
+✔ reject "-5" (0.4667ms)
+✔ reject "1e3" (0.6169ms)
+✔ reject "$5" (0.3817ms)
+✔ reject "" (0.5175ms)
+✔ reject "0" (0.7713ms)
+✔ reject "0.00" (0.4321ms)
+✔ zero minor units (0.4927ms)
+✔ amount and safe sum boundaries (0.5789ms)
+✔ CSV data row boundary (26.6636ms)
+✔ CSV BOM, CRLF, blank lines, commas and escaped quotes (3.819ms)
+✔ partial settlement and FIFO by due override (2.9856ms)
+✔ FIFO breaks ties by sale date then file order (0.79ms)
+✔ overpayment creates credit, and next sale consumes it (0.9422ms)
+✔ prepayment (0.4992ms)
+✔ same-day sales precede earlier-listed payments (1.2266ms)
+✔ due today and aging edges (0.7947ms)
+✔ terms precedence (0.5233ms)
+✔ formatters and calendar validation (15.529ms)
+✔ validates multiple issues with row and file, capped at twenty (13.9198ms)
+✔ future transactions excluded and warnings counted; deterministic summary (7.3903ms)
+✔ D9 three minor units parse and format 1.250 and reject 1.2501 (5.2068ms)
+✔ D9 zero minor units display JPY without decimals and reject 100.0 (1.2958ms)
+✔ F1 transaction maximum and one above with CSV row (16.1278ms)
+✔ F1 currency symbol maximum and one above with shop row (4.205ms)
+✔ F1 customer absolute balance maximum and one above (5.1541ms)
+✔ F1 customer credit and negative balance maximum and one above (3.9435ms)
+✔ F1 customer overdue maximum and one above (1.2871ms)
+✔ F1 shop outstanding maximum and one above (24.308ms)
+✔ F1 shop overdue maximum and one above (18.7984ms)
+✔ F1 shop credit maximum and one above use total_credit (18.5001ms)
+✔ S3 sample summary schema and total_credit (48.1608ms)
+✔ S3 stress-max summary schema and total_credit (8.2739ms)
+✔ S3 stress-min summary schema and total_credit (3.9176ms)
+✔ S7 sample summary-only command writes one file byte-identical to build (4351.1902ms)
+ℹ tests 47
+ℹ suites 0
+ℹ pass 47
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5037.1922
+exit code: 0

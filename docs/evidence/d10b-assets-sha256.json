@@ -1,0 +1,49 @@
+{
+    "provenance":  "code commit: d4b76119855174cbf90510a41e4cdc59131c05c8",
+    "renderedFrom":  "code commit: 9e0c70b75bfa2a31c7d5f4820f943a3d2b16bd23",
+    "candidateCommit":  "714a72b361659a11e7d7102b7f1e8836f7fdb9c3",
+    "files":  [
+                  {
+                      "file":  "ledger-1280.png",
+                      "candidate":  "9171b613be8c4119b5046b476a5b48a9568b6b930f75d20d277eb91ad15b4df8",
+                      "regenerated":  "9171b613be8c4119b5046b476a5b48a9568b6b930f75d20d277eb91ad15b4df8",
+                      "result":  "IDENTICAL"
+                  },
+                  {
+                      "file":  "ledger-390.png",
+                      "candidate":  "999c174a7a74ad7983b16ab8d9658e814988af97c8292db939abf030ac80eb55",
+                      "regenerated":  "999c174a7a74ad7983b16ab8d9658e814988af97c8292db939abf030ac80eb55",
+                      "result":  "IDENTICAL"
+                  },
+                  {
+                      "file":  "statement-c3.png",
+                      "candidate":  "31bf12325ed4f1f7af12f57e80780b7312a4f5d43d38f74ff719b023857fa595",
+                      "regenerated":  "31bf12325ed4f1f7af12f57e80780b7312a4f5d43d38f74ff719b023857fa595",
+                      "result":  "IDENTICAL"
+                  },
+                  {
+                      "file":  "reminder-c3-square.png",
+                      "candidate":  "792cab6d9de08a6940f1123bddfa83c8b139ccd3a7c1481acea7a7edd28e3b43",
+                      "regenerated":  "792cab6d9de08a6940f1123bddfa83c8b139ccd3a7c1481acea7a7edd28e3b43",
+                      "result":  "IDENTICAL"
+                  },
+                  {
+                      "file":  "receipt-E015-gmail-600.png",
+                      "candidate":  "c988047eae6036e6454645690b3538b2fb0c410c8e385550f9eed7058e6301e1",
+                      "regenerated":  "c988047eae6036e6454645690b3538b2fb0c410c8e385550f9eed7058e6301e1",
+                      "result":  "IDENTICAL"
+                  },
+                  {
+                      "file":  "receipt-E015-gmail-390.png",
+                      "candidate":  "ac6213a390c732e2e13c20baca3bce76e48b61d2970f447cbc90f4f5269d9e7f",
+                      "regenerated":  "ac6213a390c732e2e13c20baca3bce76e48b61d2970f447cbc90f4f5269d9e7f",
+                      "result":  "IDENTICAL"
+                  },
+                  {
+                      "file":  "receipt-E015-outlook-com-600.png",
+                      "candidate":  "436a984820347ddc1f87ebdeff0b32b9435e49eac234deb47d1035fe22709612",
+                      "regenerated":  "436a984820347ddc1f87ebdeff0b32b9435e49eac234deb47d1035fe22709612",
+                      "result":  "IDENTICAL"
+                  }
+              ]
+}
