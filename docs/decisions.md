@@ -1,13 +1,13 @@
 # OweBook setup verification
 
-Verified on 2026-11-20 in `C:\dev\OweBook`. The standalone repository has the expected origin and no commits. Node is v24.14.1 and npm is 11.18.0. PowerShell blocked `npm.ps1`, so verification used `npm.cmd`.
+Initial verification on 2026-11-20 used Node v24.14.1 and npm 11.18.0. The standalone repository had the expected origin and no commits at that time. PowerShell blocked `npm.ps1`, so verification used `npm.cmd`.
 
 ## Installed dependencies
 
 `npm.cmd ls --depth=0` exited 0:
 
 ```text
-owebook@1.0.0 C:\dev\OweBook
+owebook@1.0.0 <repository root>
 ├── @hyper-elements/cli@0.2.10
 ├── @hyper-elements/email-clients@0.4.16
 ├── @hyper-elements/lint@0.1.7
@@ -58,7 +58,7 @@ R1 resolved decimal parsing. Two-minor-unit currencies accept `15000`, `15000.5`
 The hello-world CLI Document worker returned this exact error:
 
 ```text
-Package subpath './en-us' is not defined by "exports" in C:\dev\OweBook\node_modules\@react-pdf\hyphenate\package.json
+Package subpath './en-us' is not defined by "exports" in <repository root>\node_modules\@react-pdf\hyphenate\package.json
 ```
 
 Production statements use the public `validate` and `renderPdf` APIs in native Node ESM. The CP1 CLI check covers Page, Canvas, and Email. The optional compatibility experiment was skipped because the approved API path works with the installed dependencies.

@@ -2,15 +2,14 @@
 
 | Requirement | Status | Evidence |
 | --- | --- | --- |
-| Hyper Elements meaningfully used in four formats | PASS locally | [Templates](../templates), [shared theme](../kit/theme.ts), [CLI check](../out/sample/evidence/hyper-elements-check.jsonl), [Document API results](../out/sample/evidence/diagnostics.json) |
-| Complete source in a public GitHub repository | PENDING | Local source is present. Published source and public visibility await an authorized release. |
-| README contains the three required headings | PASS locally | [README](../README.md) |
-| README includes real screenshots for all four outputs | PASS locally | [Ledger](../assets/ledger-1280.png), [statement](../assets/statement.png), [reminder](../assets/reminder.png), [receipt](../assets/receipt.png) |
-| README explains the Hyper Elements implementation | PASS locally | [Implementation](../README.md#hyper-elements-implementation), [build script](../scripts/build.tsx) |
-| README contains working run commands | PASS for the installed Windows workspace | [Setup instructions](../README.md#setup-instructions), [Windows verification](../out/parallel/sample-verify.txt) |
-| Fresh WSL clone using only README steps | PENDING | Requires authorized publication and a new clone. |
-| Required Hyper Elements repository star | PENDING | Owner confirmation required. |
-| Gmail and Outlook screenshot previews | PENDING | The receipt preview is a Chromium capture of rendered HTML. |
-| Stress layout verification | PASS locally | [PDF gutter measurements](../out/parallel/pdf-gutter.json), [stress-max statement](../out/stress-max/screenshots/statement.png), [390 px stress-max ledger](../out/stress-max/screenshots/ledger-390.png), [final stress-max transcript](../out/parallel/final-stress-max-verify.txt). Claude's acceptance remains pending. |
-| Claude's design and CP1 acceptance | PENDING | Awaiting Claude's decision. |
+| Meaningful Hyper Elements use in Page, Document, Canvas, and Email | PASS locally | [Templates](../templates), [shared theme](../kit/theme.ts), [CLI and verification](evidence/windows-complete.txt), [Document validation](evidence/diagnostics-sample.json) |
+| Public GitHub repository containing the complete source | PENDING | Local source is committed. Public visibility and release contents await authorization. |
+| README has the three required headings | PASS locally | [README](../README.md) |
+| README preview uses approved rendered screenshots | PENDING | [Preview placeholders](../README.md#preview). D10 requires ChatGPT’s visual verdict and Claude’s clearance. |
+| README explains Hyper Elements implementation | PASS locally | [Implementation](../README.md#hyper-elements-implementation) |
+| README supplies working setup and run steps | PASS locally | [Setup](../README.md#setup-instructions), [fresh WSL clone](evidence/wsl-portable.txt), [Windows verification](evidence/windows-complete.txt), [WSL full verification](evidence/wsl-complete.txt) |
+| Required Hyper Elements repository star | PENDING | Owner confirmation is pending. |
+| Gmail and Outlook visual review | PENDING | Full-tier receipt screenshots are Chromium renders. |
+| Stress layout verification | PASS locally | [PDF gutter](evidence/pdf-gutter.json), [stress inspection](evidence/wsl-complete.txt) |
+| CP1 acceptance | PASS | Claude accepted CP1 in the owner’s Day 2 authorization. |
 | Submission | PENDING | [Draft form fields](submission.md). |
