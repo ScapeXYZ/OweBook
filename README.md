@@ -13,15 +13,23 @@ Hyper Elements React 0.4.6 supplies the Page, Document, Canvas, and Email roots.
 
 # Setup instructions
 
-Use Node **24.14.1** and npm **11.18.0**. Native ESM is required for the statement renderer and is enabled in `package.json`. Install Poppler so `pdfinfo`, `pdffonts`, `pdftotext`, and `pdftoppm` are available. On Windows, install `poppler-utils` inside your default WSL distro. Use `npm.cmd` in PowerShell when its execution policy blocks `npm.ps1`.
+Use Node and npm. Verification targets Windows Node **24.14.1** with npm **11.18.0** and WSL Node **20.20.2** with npm **10.8.2**. Native ESM is required for the statement renderer and is enabled in `package.json`. Use `npm.cmd` in PowerShell when its execution policy blocks `npm.ps1`.
 
 From the repository root:
 
 ```sh
 npm ci
-npm exec -- playwright install chromium
 npm run verify
 npm run build -- --data data/sample --as-of 2026-11-20 --out out/sample
+```
+
+`npm run verify` uses Node only. It runs tests, typechecking, contrast checks, builds, and template checks or Document validation for the sample, both stress sets, USD, and JPY.
+
+`npm run verify:full` adds screenshots, Poppler inspection, and the Python cross-check. Install Python 3 and Poppler's `pdfinfo`, `pdffonts`, `pdftotext`, and `pdftoppm`. On Windows, install `poppler-utils` inside the default WSL distribution. Install the Playwright Chromium browser before running the full tier.
+
+```sh
+npm exec -- playwright install chromium
+npm run verify:full
 ```
 
 The build reads `shop.json`, `customers.csv`, and `transactions.csv` from the data folder. See [the sample](data/sample) for headers and shop settings, and [the ledger rules](docs/spec.md) for dates, amounts, allocation, credit, and aging. Add `--payment <id>` to choose a receipt. The current scope includes A4 statements and square reminders. See [recorded limitations](docs/decisions.md#known-limitations).

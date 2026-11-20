@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "tsx --test tests/*.test.ts",
+    "test": "tsx scripts/test.ts",
     "typecheck": "tsc -p tsconfig.json",
     "build": "tsx scripts/build.tsx",
     "contrast": "tsx scripts/contrast.ts",
     "screenshots": "tsx scripts/screenshot.ts",
     "verify": "tsx scripts/verify.ts",
+    "verify:full": "tsx scripts/verify.ts --full",
     "summary": "tsx scripts/summary.ts",
     "crosscheck": "tsx scripts/crosscheck.ts"
   },

@@ -1,23 +1,19 @@
-import { copyFile, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { access, copyFile, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
 import { join, resolve } from "node:path";
 import assert from "node:assert/strict";
 import type { Summary } from "../core/ledger.js";
 
-const dataset = process.argv[2] ?? "data/sample";
-const date = process.argv[3] ?? "2026-11-20";
-const sample = process.argv[4] ?? "out/sample";
-const isSample = process.argv[2] === undefined;
-const screenshots = isSample ? "assets" : join(sample, "screenshots");
-const evidence = join(sample, "evidence");
+const datasets = ["sample", "stress-max", "stress-min", "currency-usd", "currency-jpy"];
+const date = "2026-11-20";
 const cli = "node_modules/@hyper-elements/cli/dist/bin.js";
-const run = (executable: string, args: string[], allowed = [0]) => {
+const run = (executable: string, args: string[]) => {
   console.log("$", executable, ...args);
   const result = spawnSync(executable, args, { encoding: "utf8", windowsHide: true });
   if (result.stdout) process.stdout.write(result.stdout);
   if (result.stderr) process.stderr.write(result.stderr);
   if (result.error) throw result.error;
-  if (!allowed.includes(result.status ?? -1)) throw new Error("Command exited " + result.status);
+  if (result.status !== 0) throw new Error(executable + " exited " + result.status);
   return result.stdout;
 };
 const node = (args: string[]) => run(process.execPath, args);
@@ -28,16 +24,45 @@ const pdfPath = (file: string) => process.platform === "win32"
   ? run("wsl.exe", ["--exec", "wslpath", "-a", resolve(file).replaceAll("\\", "/")]).trim() : resolve(file);
 
 async function main() {
+  const full = process.argv.includes("--full");
+  const evidence = join("out", "sample", "evidence");
   await mkdir(evidence, { recursive: true });
   await writeFile(join(evidence, "typecheck.txt"), node(["node_modules/typescript/bin/tsc", "-p", "tsconfig.json"]));
-  await writeFile(join(evidence, "tests.txt"), tsx("--test", "tests/*.test.ts"));
+  await writeFile(join(evidence, "tests.txt"), tsx("scripts/test.ts"));
   await writeFile(join(evidence, "contrast.txt"), tsx("scripts/contrast.ts"));
-  await writeFile(join(evidence, "build.txt"), tsx("scripts/build.tsx", "--data", dataset, "--as-of", date, "--out", sample));
-  // Statements are covered by the public validate() API and native ESM PDF renderer in build.tsx.
-  const check = isSample
-    ? node([cli, "check", "templates/ledger.tsx", "templates/reminder.tsx", "templates/receipt.tsx", "--rendered", "--json"])
-    : await checkStress(summaryForCheck());
-  await writeFile(join(evidence, "hyper-elements-check.jsonl"), check);
+  for (const name of datasets) {
+    const output = "out/" + name;
+    const evidence = join(output, "evidence");
+    await mkdir(evidence, { recursive: true });
+    await writeFile(join(evidence, "build.txt"), tsx("scripts/build.tsx", "--data", "data/" + name, "--as-of", date, "--out", output));
+    const summary = JSON.parse(await readFile(join(output, "summary.json"), "utf8")) as Summary;
+    // build.tsx records public API validation for every statement.
+    await writeFile(join(evidence, "hyper-elements-check.jsonl"), await checkTemplates(summary, evidence));
+  }
+  if (!full) return;
+
+  for (const tool of ["pdfinfo", "pdffonts", "pdftotext", "pdftoppm"]) {
+    try {
+      poppler(tool, "-v");
+    } catch (cause) {
+      throw new Error("Full verification requires Poppler's " + tool + (process.platform === "win32" ? " in the default WSL distribution." : " on PATH."), { cause });
+    }
+  }
+  const { chromium } = await import("playwright");
+  try {
+    await access(chromium.executablePath());
+  } catch (cause) {
+    throw new Error("Full verification requires Playwright Chromium. Run npm exec -- playwright install chromium.", { cause });
+  }
+  tsx("scripts/crosscheck.ts", "--require-python", "--sets", ...datasets, "--report", "out/full/crosscheck.json");
+  for (const name of datasets) await inspectOutputs(name);
+}
+
+async function inspectOutputs(name: string) {
+  const sample = "out/" + name;
+  const evidence = join(sample, "evidence");
+  const screenshots = join(sample, "screenshots");
+  const isSample = name === "sample";
   const summary = JSON.parse(await readFile(join(sample, "summary.json"), "utf8")) as Summary;
   const statements = join(sample, "statements");
   const pdfs = (await readdir(statements)).filter(name => name.endsWith(".pdf") && summary.ledgers.some(customer => name === customer.id + ".pdf"));
@@ -69,12 +94,7 @@ async function main() {
   await writeFile(join(evidence, "screenshots.txt"), tsx("scripts/screenshot.ts", sample, screenshots, ...(receipt ? [receipt] : []), ...(isSample ? [] : ["--wide"])));
 }
 
-async function summaryForCheck() {
-  return JSON.parse(await readFile(join(sample, "summary.json"), "utf8")) as Summary;
-}
-
-async function checkStress(input: Promise<Summary>) {
-  const summary = await input;
+async function checkTemplates(summary: Summary, evidence: string) {
   const customer = summary.ledgers[0];
   const payment = customer.entries.findLast(entry => entry.type === "payment");
   const targets = [

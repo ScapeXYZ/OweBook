@@ -83,6 +83,10 @@ USD and JPY rendered all four roots. Each had three one-page A4 statements with 
 
 The three-decimal Arabic KWD probe used `د.ك`. The Canvas displayed boxed missing glyphs and incorrect digit order. The PDF raster also showed malformed currency text. The symbol must be a character the bundled Lato includes; otherwise use the ISO code as the symbol. KWD was a glyph probe and is excluded from the tested currency list.
 
+### WSL Node 20 recovery
+
+At code commit `db5d3748c2ac4cc38008fc23c65d82b163394e3a`, WSL Node 20.20.2 with npm 10.8.2 completed `npm ci`. npm installed 101 packages, audited 102 packages, and reported six moderate severity vulnerabilities. No audit remediation or dependency version changes were applied. The subsequent verification failed when Node received the literal path `tests/*.test.ts`. The verification launcher now enumerates the files and passes each test path directly.
+
 - The Windows `npm.cmd run verify` run passed. It exercised 31 tests, typechecking, five contrast pairs, the sample build, CLI checks for Page/Canvas/Email, public API validation for all eight Documents, WSL Poppler, and Chromium screenshots.
 - The sample build recorded 29 rendering or validation results with 65 informational findings. The findings cover small labels, classic Outlook spacing, and email-client font degradation. Full findings are in `out/sample/evidence/diagnostics.json`; the CLI's separate findings are in `out/sample/evidence/hyper-elements-check.jsonl`.
 - The sample input generated its own ledger warnings for the two fictional-data label columns and the deliberately excluded post-as-of transaction.
