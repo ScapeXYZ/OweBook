@@ -34,6 +34,8 @@ npm run verify:full
 
 The build reads `shop.json`, `customers.csv`, and `transactions.csv` from the data folder. See [the sample](data/sample) for headers and shop settings, and [the ledger rules](docs/spec.md) for dates, amounts, allocation, credit, and aging. Add `--payment <id>` to choose a receipt. The current scope includes A4 statements and square reminders. See [recorded limitations](docs/decisions.md#known-limitations).
 
+`shop.paper` accepts only `A4` and defaults to `A4` when omitted. Letter is rejected. The reminder card supports square format only. See the [input and command capability audit](docs/spec.md#input-and-command-capability-audit) for fields that are accepted but not displayed.
+
 The CP1 suite covers decimal syntax and limits, CSV parsing, date validation, payment allocation, overpayment and prepayment, aging, currency formatting, and determinism. The verification runner also checks contrast, PDF pagination and embedded fonts, and browser layout.
 
 Enter positive decimal strings with no grouping or currency symbol. The precision must fit the currency's minor units, and the shop's currency symbol can have at most 3 characters. Limits in minor units are 9,999,999,999 per transaction, 99,999,999,999 each for a customer's absolute balance, credit, and overdue amount, and 9,999,999,999,999 each for the shop's outstanding, overdue, and credit totals. Each CSV accepts up to 10,000 data rows.

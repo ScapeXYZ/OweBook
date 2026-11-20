@@ -1,7 +1,7 @@
 import { csv } from "./csv.js";
 import { day, parseAmount, type Currency } from "./values.js";
 
-export type Shop = { name: string; currency: Currency; default_terms_days: number; payment_instructions: string[]; paper: "A4" | "Letter"; contact?: string };
+export type Shop = { name: string; currency: Currency; default_terms_days: number; payment_instructions: string[]; paper: "A4"; contact?: string };
 export type Customer = { id: string; name: string; phone?: string; terms_days?: number };
 export type Transaction = { id: string; customer_id: string; date: number; amount: number; type: "sale" | "payment"; note?: string; due_date?: number; method?: string; reference?: string; order: number; sourceLine?: number };
 
@@ -38,7 +38,8 @@ export function validateInput(files: { shop: string; customers: string; transact
     const defaultTerms = field(() => integer(source.default_terms_days === undefined ? 14 : source.default_terms_days, "default_terms_days", 0, 120));
     const paper = field(() => {
       const value = source.paper === undefined ? "A4" : source.paper;
-      if (value !== "A4" && value !== "Letter") throw new Error("Invalid paper");
+      if (value === "Letter") throw new Error("Letter is not supported in this version; only A4");
+      if (value !== "A4") throw new Error("Invalid paper; only A4 is supported");
       return value;
     });
     const instructions = field(() => {

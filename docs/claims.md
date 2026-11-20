@@ -12,6 +12,7 @@
 | Repository-root setup commands and five-dataset Node-only verification | [Fresh-clone README run](evidence/wsl-portable.txt), [repeat WSL results](evidence/wsl-complete.txt), [runner](../scripts/verify.ts) | Verified locally |
 | Full tier, Chromium installation, Python and Poppler prerequisites, Windows WSL routing, and WSL pass | [Runner](../scripts/verify.ts), [Chromium installation and original recovery transcript](evidence/wsl-original-recovery.txt), [WSL full tier](evidence/wsl-complete.txt) | Verified locally |
 | Input files, explicit as-of, receipt selection, and A4 and square output scope | [Build arguments](../scripts/build.tsx), [sample](../data/sample), [ledger rules](spec.md), [PDF and screenshots](evidence/wsl-complete.txt) | Verified locally and in source |
+| Paper defaults to A4, Letter is rejected, and the reminder card supports square format only. | [D11 tests](../tests/capabilities.test.ts), [input and CLI audit](spec.md#input-and-command-capability-audit), [reminder template](../templates/reminder.tsx) | Verified locally and in source |
 | Decimal syntax, currency-symbol width, monetary limits and CSV row cap | [Boundary tests](../tests/limits.test.ts), [parsing tests](../tests/core.test.ts), [input rules](spec.md) | Verified locally |
 | Bundled Lato glyph requirement and ISO-code fallback | [Arabic glyph probe](decisions.md#day-2-currency-verification) | Verified locally |
 | Summary-only command | [CLI test](../tests/summary.test.ts), [Windows results](evidence/windows-complete.txt) | Verified locally |
